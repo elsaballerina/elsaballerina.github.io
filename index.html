@@ -121,6 +121,16 @@
         body.dark .game-card h3, body.dark .game-card .text-3xl { color: #e2e8f0 !important; }
         body.dark .text-gray-600 { color: #94a3b8; }
         body.dark .bg-indigo-100 { background-color: rgba(49, 46, 129, 0.6); color: #c7d2fe; }
+        
+        /* Dark Mode for Form Inputs */
+        body.dark .form-input {
+            background-color: rgba(30, 41, 59, 0.6);
+            border-color: rgba(255, 182, 193, 0.2);
+            color: #e2e8f0;
+        }
+        body.dark .form-input:focus {
+            border-color: #a5b4fc; /* Indigo highlight in dark mode */
+        }
     </style>
 </head>
 <body class="relative pb-20">
@@ -250,6 +260,43 @@
                     Holding a Steam account since 2003, I’ve collected decades of digital experiences. This long history prompts the thought: "I hope my profile endures long after I'm gone." Contemplating this passage of time deepens my appreciation for life’s simpler moments. I now consciously focus on staying present in the 'now,' even when it's a daily effort. Recognizing what I cannot change about the past fuels my commitment to shaping a better future.
                 </p>
             </div>
+        </section>
+
+        <!-- CONTACT ME SECTION -->
+        <section class="glass-panel rounded-3xl p-8 w-full mb-10">
+            <h2 class="cursive-title text-4xl text-pink-500 mb-4 border-b-2 border-pink-200 pb-2 inline-block">💌 Get In Touch</h2>
+            <p class="text-gray-800 text-lg mb-6 leading-relaxed">
+                Want to say hi, share a game recommendation, or just spread some magic? Send me a message! ✨
+            </p>
+            
+            <!-- Replace YOUR_FORM_ID with the ID you get from Formspree.io -->
+            <form action="https://formspree.io/f/xwllkdqq" method="POST" class="space-y-5">
+                
+                <!-- Anti-Spam Honeypot: Real humans won't see this, but bots will get trapped! -->
+                <input type="text" name="_gotcha" style="display:none" />
+                
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                    <div class="flex flex-col">
+                        <label for="name" class="font-bold text-pink-600 mb-2 pl-2">Your Name</label>
+                        <input type="text" id="name" name="name" required class="form-input rounded-2xl p-4 border-2 border-pink-200 bg-white/60 focus:outline-none focus:border-pink-400 focus:ring-4 focus:ring-pink-100 transition-all shadow-sm text-gray-800" placeholder="Elsa">
+                    </div>
+                    <div class="flex flex-col">
+                        <label for="email" class="font-bold text-pink-600 mb-2 pl-2">Your Email</label>
+                        <input type="email" id="email" name="email" required class="form-input rounded-2xl p-4 border-2 border-pink-200 bg-white/60 focus:outline-none focus:border-pink-400 focus:ring-4 focus:ring-pink-100 transition-all shadow-sm text-gray-800" placeholder="magic@example.com">
+                    </div>
+                </div>
+                
+                <div class="flex flex-col">
+                    <label for="message" class="font-bold text-pink-600 mb-2 pl-2">Your Message</label>
+                    <textarea id="message" name="message" rows="5" required class="form-input rounded-2xl p-4 border-2 border-pink-200 bg-white/60 focus:outline-none focus:border-pink-400 focus:ring-4 focus:ring-pink-100 transition-all shadow-sm text-gray-800 resize-y" placeholder="Hi there! Just wanted to say..."></textarea>
+                </div>
+                
+                <div class="text-center sm:text-left pt-2">
+                    <button type="submit" class="bg-gradient-to-r from-pink-400 to-pink-500 hover:from-pink-500 hover:to-pink-600 text-white font-bold py-3 px-8 rounded-full shadow-lg transition-transform hover:scale-105 flex items-center justify-center gap-3 mx-auto sm:mx-0 w-full sm:w-auto text-lg">
+                        <i class="fas fa-paper-plane"></i> Send Message
+                    </button>
+                </div>
+            </form>
         </section>
 
     </main>
