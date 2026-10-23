@@ -11,7 +11,7 @@
     <!-- Tailwind CSS for Layouts -->
     <script src="https://cdn.tailwindcss.com"></script>
     
-    <!-- FontAwesome for Gaming/Social Icons -->
+    <!-- FontAwesome for Gaming/Social Icons (v6.5.1 includes X logo) -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     
     <style>
@@ -23,6 +23,7 @@
             margin: 0;
             min-height: 100vh;
             color: #334155;
+            overflow-x: hidden;
         }
 
         .cursive-title {
@@ -38,10 +39,10 @@
             box-shadow: 0 8px 32px 0 rgba(255, 182, 193, 0.4);
         }
 
-        /* Twirl Animation */
+        /* Twirl Animation for Avatar */
         @keyframes twirl-action {
             0% { transform: rotate(0deg) scale(1); }
-            50% { transform: rotate(180deg) scale(1.3); }
+            50% { transform: rotate(180deg) scale(1.15); }
             100% { transform: rotate(360deg) scale(1); }
         }
         .twirl-anim {
@@ -75,8 +76,8 @@
         }
         .game-card:hover {
             transform: translateY(-5px) scale(1.02);
-            background: rgba(255, 255, 255, 0.65);
-            box-shadow: 0 12px 40px 0 rgba(255, 182, 193, 0.6);
+            background: rgba(255, 255, 255, 0.75);
+            box-shadow: 0 12px 40px 0 rgba(255, 182, 193, 0.7);
         }
 
         /* Toast Notification */
@@ -103,9 +104,14 @@
         
         <!-- HEADER SECTION -->
         <header class="glass-panel rounded-3xl p-8 text-center max-w-xl w-full transform transition-all hover:scale-[1.02] duration-300">
-            <div id="ballerina-emoji" class="text-7xl mb-4 inline-block origin-center cursor-pointer drop-shadow-md" title="Click me to twirl!">
-                🩰
+            <!-- Clickable Profile Picture -->
+            <div class="relative inline-block mb-4">
+                <img id="profile-pic" src="Elsa Ballet Shoes.jpg" alt="Elsa Ballet Shoes" class="w-40 h-40 object-cover rounded-full border-4 border-pink-200 shadow-xl cursor-pointer mx-auto origin-center transition-transform" title="Click me to twirl!">
+                <div class="absolute -bottom-2 -right-2 bg-white rounded-full p-2 text-2xl shadow-md cursor-pointer pointer-events-none">
+                    ✨
+                </div>
             </div>
+            
             <h1 class="cursive-title text-5xl sm:text-6xl text-pink-500 mb-2 drop-shadow-sm font-bold">
                 Elsa Ballerina
             </h1>
@@ -130,17 +136,35 @@
             </div>
         </section>
 
+        <!-- DISCORD SERVER SHOWCASE -->
+        <section class="glass-panel rounded-3xl p-8 w-full bg-white/50">
+            <div class="flex flex-col md:flex-row items-center gap-8">
+                <img src="Ballet of Death_2.jpg" alt="Ballet of Death Logo" class="w-48 h-48 rounded-2xl shadow-lg border-2 border-pink-300">
+                <div class="flex-1 text-center md:text-left">
+                    <h2 class="cursive-title text-4xl text-pink-500 mb-2">🩰 Ballet of Death 🩰</h2>
+                    <p class="text-gray-800 text-lg mb-4">
+                        Join my official Discord community! We'd love to have you hang out, chat about games, and share some magical moments.
+                    </p>
+                    <div class="flex flex-col sm:flex-row items-center gap-4 justify-center md:justify-start">
+                        <a href="https://discord.gg/9Tt2en59z6" target="_blank" rel="noopener noreferrer" class="bg-indigo-500 hover:bg-indigo-600 text-white font-bold py-3 px-6 rounded-full shadow-lg transition-transform hover:scale-105 flex items-center gap-2">
+                            <i class="fab fa-discord text-xl"></i> Join the Server
+                        </a>
+                        <span class="text-sm font-bold text-indigo-800 bg-indigo-100 px-4 py-2 rounded-full">Code: 9Tt2en59z6</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <!-- GAMING CONNECTIONS SECTION -->
         <section class="w-full">
             <div class="text-center mb-6">
-                <h2 class="cursive-title text-4xl text-pink-500 mb-2">My Gaming Connections 🎮</h2>
-                <p class="text-blue-800 font-medium text-sm sm:text-base">Click any card to copy my ID to your clipboard so we can play together!</p>
+                <h2 class="cursive-title text-4xl text-pink-500 mb-2">My Connections 🎮</h2>
+                <p class="text-blue-800 font-medium text-sm sm:text-base">Click any card to copy my ID to your clipboard so we can connect!</p>
             </div>
             
             <!-- Grid of Accounts -->
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
-                <!-- Using a script to generate these so they are easy to manage -->
-                <div id="connections-grid" class="contents"></div>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5" id="connections-grid">
+                <!-- Javascript will inject the cards here -->
             </div>
         </section>
 
@@ -149,19 +173,19 @@
             <h2 class="cursive-title text-4xl text-pink-500 mb-6 border-b-2 border-pink-200 pb-2 inline-block">The Lore of My Names 📖</h2>
             <div class="space-y-6">
                 
-                <div class="bg-white/30 p-4 rounded-xl border border-white/50">
-                    <h3 class="font-bold text-xl text-blue-900 mb-1">🛡️ soulpaladin</h3>
-                    <p class="text-gray-800">This nickname was gifted to me around the time Hotmail launched, inspired by the classical game on floppy-disks called <em>Warlords</em>. It stuck!</p>
+                <div class="bg-white/40 p-5 rounded-2xl border border-white/60 shadow-sm hover:shadow-md transition-shadow">
+                    <h3 class="font-bold text-xl text-blue-900 mb-2 flex items-center gap-2"><i class="fas fa-shield-alt text-blue-400"></i> soulpaladin</h3>
+                    <p class="text-gray-800 leading-relaxed">This nickname was gifted to me around the time Hotmail launched, inspired by the classical game on floppy-disks called <em>Warlords</em>. It stuck!</p>
                 </div>
 
-                <div class="bg-white/30 p-4 rounded-xl border border-white/50">
-                    <h3 class="font-bold text-xl text-blue-900 mb-1">🌸 Yuiko</h3>
-                    <p class="text-gray-800">This nickname came from a Japanese anime TV show that I once used to watch on Winamp. I can't recall the exact title, but I think it was related to a summer hotel and a cleaning lady called Yuiko.</p>
+                <div class="bg-white/40 p-5 rounded-2xl border border-white/60 shadow-sm hover:shadow-md transition-shadow">
+                    <h3 class="font-bold text-xl text-blue-900 mb-2 flex items-center gap-2"><i class="fas fa-fan text-pink-400"></i> Yuiko</h3>
+                    <p class="text-gray-800 leading-relaxed">This nickname came from a Japanese anime TV show that I once used to watch on Winamp. I can't recall the exact title, but I think it was related to a summer hotel and a cleaning lady called Yuiko.</p>
                 </div>
 
-                <div class="bg-white/30 p-4 rounded-xl border border-white/50">
-                    <h3 class="font-bold text-xl text-pink-600 mb-1">🩰 Elsa Ballerina</h3>
-                    <p class="text-gray-800">This nickname doesn't come from the popular 2013 film <em>Frozen</em>! It was suggested to me by a close person many moons ago. "Ballerina" comes from <em>Les Ballets Trockadero de Monte Carlo</em>, and my clan name (Ballet of Death) came from watching an awesome video on YouTube called <em>The Gunfighter</em>.</p>
+                <div class="bg-white/40 p-5 rounded-2xl border border-white/60 shadow-sm hover:shadow-md transition-shadow">
+                    <h3 class="font-bold text-xl text-pink-600 mb-2 flex items-center gap-2"><i class="fas fa-shoe-prints text-pink-500"></i> Elsa Ballerina</h3>
+                    <p class="text-gray-800 leading-relaxed">This nickname doesn't come from the popular 2013 film <em>Frozen</em>! It was suggested to me by a close person many moons ago. "Ballerina" comes from <em>Les Ballets Trockadero de Monte Carlo</em>, and my clan name (Ballet of Death) came from watching an awesome video on YouTube called <em>The Gunfighter</em>.</p>
                 </div>
 
             </div>
@@ -170,22 +194,23 @@
     </main>
 
     <!-- Cute Toast Notification -->
-    <div id="toast" class="bg-pink-500 text-white px-6 py-3 rounded-full shadow-xl font-bold flex items-center gap-2">
-        <span>✨</span> <span id="toast-msg">Copied!</span> <span>✨</span>
+    <div id="toast" class="bg-pink-500 text-white px-6 py-3 rounded-full shadow-xl font-bold flex items-center gap-3">
+        <i class="fas fa-magic"></i> <span id="toast-msg">Copied!</span> <i class="fas fa-sparkles"></i>
     </div>
 
     <!-- Javascript -->
     <script>
-        // --- 1. GAMING ACCOUNTS DATA & RENDER ---
+        // --- 1. SOCIAL & GAMING ACCOUNTS DATA ---
         const accounts = [
             { platform: "Steam", id: "Elsa Ballerina", icon: "fab fa-steam", color: "text-blue-900" },
             { platform: "Discord", id: "elsaballerina", desc: "Server: Ballet of Death", icon: "fab fa-discord", color: "text-indigo-600" },
-            { platform: "Blizzard", id: "Ballerina#11220", desc: "Also: ElsaBallet#1940", icon: "fab fa-battle-net", color: "text-blue-500" },
             { platform: "Xbox", id: "BalletPointe", icon: "fab fa-xbox", color: "text-green-600" },
-            { platform: "Twitch", id: "elsaballerina", icon: "fab fa-twitch", color: "text-purple-600" },
-            { platform: "YouTube", id: "Elsa Ballerina", icon: "fab fa-youtube", color: "text-red-600" },
+            { platform: "Facebook", id: "Elsa Ballerina", icon: "fab fa-facebook", color: "text-blue-600" },
             { platform: "X (Twitter)", id: "ElsaBallerina", icon: "fab fa-x-twitter", color: "text-gray-900" },
+            { platform: "Twitch", id: "elsaballerina", icon: "fab fa-twitch", color: "text-purple-600" },
             { platform: "Reddit", id: "ElsaBallet", icon: "fab fa-reddit", color: "text-orange-600" },
+            { platform: "YouTube", id: "Elsa Ballerina", icon: "fab fa-youtube", color: "text-red-600" },
+            { platform: "Blizzard", id: "Ballerina#11220", desc: "Also: ElsaBallet#1940", icon: "fab fa-battle-net", color: "text-blue-500" },
             { platform: "Epic Games", id: "Elsa Ballerina", icon: "fas fa-gamepad", color: "text-gray-800" },
             { platform: "Ubisoft", id: "ElsaBallerina", desc: "(Used to be: Yuiko)", icon: "fas fa-gamepad", color: "text-blue-700" },
             { platform: "Electronic Arts", id: "ElsaBallerina", icon: "fas fa-gamepad", color: "text-red-700" },
@@ -202,7 +227,6 @@
         
         accounts.forEach(acc => {
             const card = document.createElement('div');
-            // Adding data attribute so we know what to copy
             card.setAttribute('data-copy', acc.id);
             card.className = "game-card glass-panel rounded-2xl p-4 flex items-center gap-4 cursor-pointer";
             
@@ -234,7 +258,6 @@
         let toastTimeout;
 
         function copyToClipboard(text, platformName) {
-            // Create a temporary textarea to copy text (works well in iframes/older browsers)
             const tempInput = document.createElement("textarea");
             tempInput.value = text;
             document.body.appendChild(tempInput);
@@ -252,24 +275,18 @@
             }, 3000);
         }
 
+        // --- 3. TWIRL ANIMATION LOGIC FOR AVATAR ---
+        const profilePic = document.getElementById('profile-pic');
 
-        // --- 3. TWIRL ANIMATION LOGIC ---
-        const ballerinaEmoji = document.getElementById('ballerina-emoji');
-
-        ballerinaEmoji.addEventListener('click', () => {
-            ballerinaEmoji.classList.remove('twirl-anim');
-            void ballerinaEmoji.offsetWidth; // trigger reflow
-            ballerinaEmoji.classList.add('twirl-anim');
-            
-            setTimeout(() => {
-                ballerinaEmoji.innerText = ballerinaEmoji.innerText === '🩰' ? '💃' : '🩰';
-            }, 500);
+        profilePic.addEventListener('click', () => {
+            profilePic.classList.remove('twirl-anim');
+            void profilePic.offsetWidth; // trigger browser reflow
+            profilePic.classList.add('twirl-anim');
         });
-
 
         // --- 4. FALLING SPARKLES LOGIC ---
         const particleContainer = document.getElementById('particle-container');
-        const emojis = ['✨', '🌸', '💖', '🎵', '🎀', '🎮']; // Added a game controller!
+        const emojis = ['✨', '🌸', '💖', '🩰', '🎀', '🎮', '🎵']; 
 
         function createParticle() {
             const particle = document.createElement('div');
@@ -278,19 +295,18 @@
             particle.innerText = emojis[Math.floor(Math.random() * emojis.length)];
             
             particle.style.left = Math.random() * 100 + 'vw';
-            particle.style.animationDuration = Math.random() * 4 + 6 + 's'; // Slower fall (6-10s)
-            particle.style.fontSize = Math.random() * 1.5 + 0.5 + 'rem';
+            particle.style.animationDuration = Math.random() * 5 + 7 + 's'; // Fall between 7s and 12s
+            particle.style.fontSize = Math.random() * 1.5 + 0.8 + 'rem';
             particle.style.opacity = Math.random() * 0.4 + 0.2; 
             
             particleContainer.appendChild(particle);
 
             setTimeout(() => {
                 particle.remove();
-            }, 10000);
+            }, 12000);
         }
 
-        // Create particles slightly less often to prevent overwhelming the longer scrolling page
-        setInterval(createParticle, 600);
+        setInterval(createParticle, 500); // Create a new particle every half second
     </script>
 </body>
 </html>
