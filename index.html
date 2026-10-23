@@ -140,7 +140,7 @@
         <header class="glass-panel rounded-3xl p-8 text-center max-w-xl w-full transform transition-all hover:scale-[1.02] duration-300">
             <!-- Clickable Profile Picture -->
             <div class="relative inline-block mb-4">
-                <img id="profile-pic" src="Elsa Ballet Shoes.jpg" alt="Elsa Ballet Shoes" class="w-40 h-40 object-cover rounded-full border-4 border-pink-200 shadow-xl cursor-pointer mx-auto origin-center transition-transform" title="Click me to twirl!">
+                <img id="profile-pic" src="Elsa Ballet Shoes.jpg" alt="Elsa Ballet Shoes" class="w-40 h-40 object-cover rounded-full border-4 border-pink-200 shadow-xl cursor-pointer mx-auto origin-center transition-transform" title="Click me to twirl!" onerror="this.src='https://placehold.co/150x150/ffdde1/a1c4fd?text=Ballet+Shoes'">
                 <div class="absolute -bottom-2 -right-2 bg-white rounded-full p-2 text-2xl shadow-md cursor-pointer pointer-events-none">
                     ✨
                 </div>
@@ -173,7 +173,7 @@
         <!-- DISCORD SERVER SHOWCASE -->
         <section class="glass-panel rounded-3xl p-8 w-full bg-white/50">
             <div class="flex flex-col md:flex-row items-center gap-8">
-                <img src="Ballet%20of%20Death.jpg" alt="Ballet of Death Logo" class="w-48 h-48 rounded-2xl shadow-lg border-2 border-pink-300">
+                <img src="Ballet%20of%20Death.jpg" alt="Ballet of Death Logo" class="w-48 h-48 rounded-2xl shadow-lg border-2 border-pink-300" onerror="this.src='https://placehold.co/200x200/111/ffb6c1?text=Ballet+of+Death'">
                 <div class="flex-1 text-center md:text-left">
                     <h2 class="cursive-title text-4xl text-pink-500 mb-2">🩰 Ballet of Death 🩰</h2>
                     <p class="text-gray-800 text-lg mb-4">
@@ -204,7 +204,7 @@
 
         <!-- LORE SECTION -->
         <section class="glass-panel rounded-3xl p-8 w-full">
-            <h2 class="cursive-title text-4xl text-pink-500 mb-6 border-b-2 border-pink-200 pb-2 inline-block">The Lore of My Names 📖</h2>
+            <h2 class="cursive-title text-4xl text-pink-500 mb-6 border-b-2 border-pink-200 pb-2 inline-block">📖 The Lore of My Names</h2>
             <div class="space-y-6">
                 
                 <div class="bg-white/40 p-5 rounded-2xl border border-white/60 shadow-sm hover:shadow-md transition-shadow">
@@ -246,6 +246,8 @@
     <script>
         // --- 1. SOCIAL & GAMING ACCOUNTS DATA ---
         const accounts = [
+            { platform: "NightCafe", id: "AI_Genderless", desc: "AI Videos & Images", icon: "fas fa-palette", color: "text-fuchsia-600", link: "https://creator.nightcafe.studio/u/AI_Genderless" },
+            { platform: "Suno", id: "@ai_genderless", desc: "AI Music", icon: "fas fa-music", color: "text-orange-500", link: "https://suno.com/@ai_genderless" },
             { platform: "Steam", id: "Elsa Ballerina", desc: "(Used to be: soulpaladin)", icon: "fab fa-steam", color: "text-blue-900", link: "https://steamcommunity.com/id/elsaballerina/" },
             { platform: "Discord", id: "elsaballerina", desc: "Server: 🩰Ballet of Death🩰", icon: "fab fa-discord", color: "text-indigo-600" },
             { platform: "Xbox", id: "BalletPointe", icon: "fab fa-xbox", color: "text-green-600" },
