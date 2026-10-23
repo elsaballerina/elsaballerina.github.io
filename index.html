@@ -5,150 +5,292 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Elsa Ballerina</title>
     
-    <!-- Importing cute Google Fonts -->
+    <!-- Cute Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Quicksand:wght@500;700&display=swap" rel="stylesheet">
     
-    <!-- Importing Tailwind CSS for easy, beautiful layouts -->
+    <!-- Tailwind CSS for Layouts -->
     <script src="https://cdn.tailwindcss.com"></script>
     
-    <!-- Custom Styles for Animations and Glassmorphism -->
+    <!-- FontAwesome for Gaming/Social Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
     <style>
         body {
-            /* A beautiful pastel blue and pink gradient background */
+            /* Fixed gradient so it stays beautiful when scrolling */
             background: linear-gradient(135deg, #a1c4fd 0%, #ffdde1 100%);
+            background-attachment: fixed;
             font-family: 'Quicksand', sans-serif;
-            overflow: hidden; /* Keeps the falling sparkles from creating scrollbars */
             margin: 0;
-            height: 100vh;
+            min-height: 100vh;
+            color: #334155;
         }
 
         .cursive-title {
             font-family: 'Dancing Script', cursive;
         }
 
-        /* The glassmorphism card effect */
-        .glass-card {
-            background: rgba(255, 255, 255, 0.4);
+        /* Reusable Glassmorphism style */
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.45);
             backdrop-filter: blur(12px);
             -webkit-backdrop-filter: blur(12px);
             border: 2px solid rgba(255, 255, 255, 0.6);
-            box-shadow: 0 8px 32px 0 rgba(255, 182, 193, 0.4); /* soft pink shadow */
+            box-shadow: 0 8px 32px 0 rgba(255, 182, 193, 0.4);
         }
 
-        /* Twirl Animation Keyframes */
+        /* Twirl Animation */
         @keyframes twirl-action {
             0% { transform: rotate(0deg) scale(1); }
-            50% { transform: rotate(180deg) scale(1.3); } /* Gets slightly bigger halfway through! */
+            50% { transform: rotate(180deg) scale(1.3); }
             100% { transform: rotate(360deg) scale(1); }
         }
-
         .twirl-anim {
             animation: twirl-action 1s ease-in-out;
         }
 
-        /* Falling Sparkles & Flowers styling */
-        .magic-particle {
+        /* Falling Particles */
+        #particle-container {
             position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            pointer-events: none; /* Let clicks pass through */
+            z-index: 0;
+            overflow: hidden;
+        }
+        .magic-particle {
+            position: absolute;
             top: -10%;
             user-select: none;
-            pointer-events: none; /* So clicks pass through to the button */
             animation: fall linear infinite;
-            z-index: 0;
+        }
+        @keyframes fall {
+            to { transform: translateY(115vh) rotate(360deg); }
         }
 
-        @keyframes fall {
-            to {
-                transform: translateY(115vh) rotate(360deg);
-            }
+        /* Gaming Card Hover Effects */
+        .game-card {
+            transition: all 0.3s ease;
+        }
+        .game-card:hover {
+            transform: translateY(-5px) scale(1.02);
+            background: rgba(255, 255, 255, 0.65);
+            box-shadow: 0 12px 40px 0 rgba(255, 182, 193, 0.6);
+        }
+
+        /* Toast Notification */
+        #toast {
+            position: fixed;
+            bottom: -100px;
+            left: 50%;
+            transform: translateX(-50%);
+            transition: bottom 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+            z-index: 50;
+        }
+        #toast.show {
+            bottom: 30px;
         }
     </style>
 </head>
-<body class="flex items-center justify-center relative">
+<body class="relative pb-20">
 
-    <!-- Container for our magical falling particles -->
-    <div id="particle-container" class="absolute inset-0 w-full h-full"></div>
+    <!-- Falling Magic Particles -->
+    <div id="particle-container"></div>
 
-    <!-- Main Glass Card Content -->
-    <div class="glass-card z-10 rounded-3xl p-10 text-center max-w-sm mx-4 transform transition-all hover:scale-105 duration-300">
+    <!-- Main Content Wrapper -->
+    <main class="relative z-10 max-w-5xl mx-auto px-4 pt-12 flex flex-col items-center gap-10">
         
-        <!-- The Ballerina Emoji -->
-        <div id="ballerina-emoji" class="text-7xl mb-4 inline-block origin-center cursor-pointer drop-shadow-md">
-            🩰
-        </div>
-        
-        <!-- The Title -->
-        <h1 class="cursive-title text-5xl text-pink-500 mb-2 drop-shadow-sm font-bold">
-            Elsa Ballerina
-        </h1>
-        
-        <!-- Subtitle -->
-        <p class="text-blue-900 text-lg mb-8 font-medium">
-            😊 My Magical Testing Page 😊
-        </p>
-        
-        <!-- Interactive Button -->
-        <button id="twirl-btn" class="bg-gradient-to-r from-pink-400 to-pink-300 text-white font-bold py-3 px-8 rounded-full shadow-lg hover:shadow-pink-500/50 hover:-translate-y-1 transition-all active:translate-y-1 active:scale-95 text-lg">
-            Click to Twirl! ✨
-        </button>
-        
+        <!-- HEADER SECTION -->
+        <header class="glass-panel rounded-3xl p-8 text-center max-w-xl w-full transform transition-all hover:scale-[1.02] duration-300">
+            <div id="ballerina-emoji" class="text-7xl mb-4 inline-block origin-center cursor-pointer drop-shadow-md" title="Click me to twirl!">
+                🩰
+            </div>
+            <h1 class="cursive-title text-5xl sm:text-6xl text-pink-500 mb-2 drop-shadow-sm font-bold">
+                Elsa Ballerina
+            </h1>
+            <p class="text-blue-900 text-lg font-medium">
+                🎀 My Magical Digital Home 🎀
+            </p>
+        </header>
+
+        <!-- ABOUT ME SECTION -->
+        <section class="glass-panel rounded-3xl p-8 w-full">
+            <h2 class="cursive-title text-4xl text-pink-500 mb-4 border-b-2 border-pink-200 pb-2 inline-block">About Me ✨</h2>
+            <div class="text-lg leading-relaxed space-y-4 text-gray-800">
+                <p>
+                    Hi Everyone! 👋 I am called <strong>Elsa Ballerina</strong> on social media and I am a proud trans woman, part of the LGBTQIA+ 🏳️‍⚧️ community. 
+                </p>
+                <p>
+                    My gaming history is deeply intertwined with PC gaming. I started with classics like Bungie's <em>Marathon</em> on a Power Mac and moved through the era of id Software's <em>Quake</em> and <em>DOOM</em>, not forgetting the intense Sierra Online <em>Half-Life</em> deathmatches. 
+                </p>
+                <p>
+                    These games connected me with a community, whether through GameSpy, C3, or Discord. Sure, those cumulative hours could have earned me four PhDs! But while gaming might have been a distraction from academia, it offered something just as valuable: a safe, sane, and far more affordable form of entertainment. 💖
+                </p>
+            </div>
+        </section>
+
+        <!-- GAMING CONNECTIONS SECTION -->
+        <section class="w-full">
+            <div class="text-center mb-6">
+                <h2 class="cursive-title text-4xl text-pink-500 mb-2">My Gaming Connections 🎮</h2>
+                <p class="text-blue-800 font-medium text-sm sm:text-base">Click any card to copy my ID to your clipboard so we can play together!</p>
+            </div>
+            
+            <!-- Grid of Accounts -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+                <!-- Using a script to generate these so they are easy to manage -->
+                <div id="connections-grid" class="contents"></div>
+            </div>
+        </section>
+
+        <!-- LORE SECTION -->
+        <section class="glass-panel rounded-3xl p-8 w-full mb-10">
+            <h2 class="cursive-title text-4xl text-pink-500 mb-6 border-b-2 border-pink-200 pb-2 inline-block">The Lore of My Names 📖</h2>
+            <div class="space-y-6">
+                
+                <div class="bg-white/30 p-4 rounded-xl border border-white/50">
+                    <h3 class="font-bold text-xl text-blue-900 mb-1">🛡️ soulpaladin</h3>
+                    <p class="text-gray-800">This nickname was gifted to me around the time Hotmail launched, inspired by the classical game on floppy-disks called <em>Warlords</em>. It stuck!</p>
+                </div>
+
+                <div class="bg-white/30 p-4 rounded-xl border border-white/50">
+                    <h3 class="font-bold text-xl text-blue-900 mb-1">🌸 Yuiko</h3>
+                    <p class="text-gray-800">This nickname came from a Japanese anime TV show that I once used to watch on Winamp. I can't recall the exact title, but I think it was related to a summer hotel and a cleaning lady called Yuiko.</p>
+                </div>
+
+                <div class="bg-white/30 p-4 rounded-xl border border-white/50">
+                    <h3 class="font-bold text-xl text-pink-600 mb-1">🩰 Elsa Ballerina</h3>
+                    <p class="text-gray-800">This nickname doesn't come from the popular 2013 film <em>Frozen</em>! It was suggested to me by a close person many moons ago. "Ballerina" comes from <em>Les Ballets Trockadero de Monte Carlo</em>, and my clan name (Ballet of Death) came from watching an awesome video on YouTube called <em>The Gunfighter</em>.</p>
+                </div>
+
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Cute Toast Notification -->
+    <div id="toast" class="bg-pink-500 text-white px-6 py-3 rounded-full shadow-xl font-bold flex items-center gap-2">
+        <span>✨</span> <span id="toast-msg">Copied!</span> <span>✨</span>
     </div>
 
-    <!-- Javascript to make it interactive -->
+    <!-- Javascript -->
     <script>
-        // --- 1. TWIRL ANIMATION LOGIC ---
-        const twirlBtn = document.getElementById('twirl-btn');
+        // --- 1. GAMING ACCOUNTS DATA & RENDER ---
+        const accounts = [
+            { platform: "Steam", id: "Elsa Ballerina", icon: "fab fa-steam", color: "text-blue-900" },
+            { platform: "Discord", id: "elsaballerina", desc: "Server: Ballet of Death", icon: "fab fa-discord", color: "text-indigo-600" },
+            { platform: "Blizzard", id: "Ballerina#11220", desc: "Also: ElsaBallet#1940", icon: "fab fa-battle-net", color: "text-blue-500" },
+            { platform: "Xbox", id: "BalletPointe", icon: "fab fa-xbox", color: "text-green-600" },
+            { platform: "Twitch", id: "elsaballerina", icon: "fab fa-twitch", color: "text-purple-600" },
+            { platform: "YouTube", id: "Elsa Ballerina", icon: "fab fa-youtube", color: "text-red-600" },
+            { platform: "X (Twitter)", id: "ElsaBallerina", icon: "fab fa-x-twitter", color: "text-gray-900" },
+            { platform: "Reddit", id: "ElsaBallet", icon: "fab fa-reddit", color: "text-orange-600" },
+            { platform: "Epic Games", id: "Elsa Ballerina", icon: "fas fa-gamepad", color: "text-gray-800" },
+            { platform: "Ubisoft", id: "ElsaBallerina", desc: "(Used to be: Yuiko)", icon: "fas fa-gamepad", color: "text-blue-700" },
+            { platform: "Electronic Arts", id: "ElsaBallerina", icon: "fas fa-gamepad", color: "text-red-700" },
+            { platform: "GOG", id: "Elsa Ballerina", icon: "fas fa-gamepad", color: "text-purple-800" },
+            { platform: "Activision", id: "Elsa Ballerina#3650968", icon: "fas fa-crosshairs", color: "text-gray-800" },
+            { platform: "Bungie", id: "Ballerina#2773", icon: "fas fa-rocket", color: "text-gray-700" },
+            { platform: "ArenaNet", id: "Ballerina.9106", icon: "fas fa-dragon", color: "text-red-800" },
+            { platform: "Nintendo", id: "SW-0034-0920-3926", icon: "fas fa-gamepad", color: "text-red-600" },
+            { platform: "HoYoLAB", id: "UID: 636834676", desc: "Genshin Impact", icon: "fas fa-star", color: "text-yellow-600" },
+            { platform: "Gryphline", id: "UID: 6271456168", desc: "Arknights Endfield", icon: "fas fa-cube", color: "text-teal-600" }
+        ];
+
+        const grid = document.getElementById('connections-grid');
+        
+        accounts.forEach(acc => {
+            const card = document.createElement('div');
+            // Adding data attribute so we know what to copy
+            card.setAttribute('data-copy', acc.id);
+            card.className = "game-card glass-panel rounded-2xl p-4 flex items-center gap-4 cursor-pointer";
+            
+            let descHtml = acc.desc ? `<p class="text-xs text-gray-600 mt-1">${acc.desc}</p>` : '';
+
+            card.innerHTML = `
+                <div class="text-3xl w-12 text-center ${acc.color}">
+                    <i class="${acc.icon}"></i>
+                </div>
+                <div class="flex-1">
+                    <h3 class="font-bold text-gray-800 text-sm uppercase tracking-wider">${acc.platform}</h3>
+                    <p class="text-pink-600 font-medium">${acc.id}</p>
+                    ${descHtml}
+                </div>
+            `;
+            
+            // Add click event for copying
+            card.addEventListener('click', function() {
+                const textToCopy = this.getAttribute('data-copy');
+                copyToClipboard(textToCopy, acc.platform);
+            });
+
+            grid.appendChild(card);
+        });
+
+        // --- 2. COPY TO CLIPBOARD LOGIC ---
+        const toast = document.getElementById('toast');
+        const toastMsg = document.getElementById('toast-msg');
+        let toastTimeout;
+
+        function copyToClipboard(text, platformName) {
+            // Create a temporary textarea to copy text (works well in iframes/older browsers)
+            const tempInput = document.createElement("textarea");
+            tempInput.value = text;
+            document.body.appendChild(tempInput);
+            tempInput.select();
+            document.execCommand("copy");
+            document.body.removeChild(tempInput);
+
+            // Show cute toast message
+            toastMsg.innerText = `Copied ${platformName} ID!`;
+            toast.classList.add('show');
+            
+            clearTimeout(toastTimeout);
+            toastTimeout = setTimeout(() => {
+                toast.classList.remove('show');
+            }, 3000);
+        }
+
+
+        // --- 3. TWIRL ANIMATION LOGIC ---
         const ballerinaEmoji = document.getElementById('ballerina-emoji');
 
-        // When the button is clicked, add the twirl animation class
-        twirlBtn.addEventListener('click', () => {
-            // Remove the class first so we can click it multiple times
+        ballerinaEmoji.addEventListener('click', () => {
             ballerinaEmoji.classList.remove('twirl-anim');
-            
-            // A little trick to restart CSS animations
-            void ballerinaEmoji.offsetWidth; 
-            
-            // Add it back to trigger the spin
+            void ballerinaEmoji.offsetWidth; // trigger reflow
             ballerinaEmoji.classList.add('twirl-anim');
             
-            // Occasionally switch the emoji for extra fun!
             setTimeout(() => {
                 ballerinaEmoji.innerText = ballerinaEmoji.innerText === '🩰' ? '💃' : '🩰';
-            }, 500); // Changes right in the middle of the spin
-        });
-
-        // Also let the user click the emoji directly to twirl!
-        ballerinaEmoji.addEventListener('click', () => {
-            twirlBtn.click();
+            }, 500);
         });
 
 
-        // --- 2. FALLING SPARKLES & BLOSSOMS LOGIC ---
+        // --- 4. FALLING SPARKLES LOGIC ---
         const particleContainer = document.getElementById('particle-container');
-        const emojis = ['✨', '🌸', '💖', '🎵']; // Things that will fall from the sky
+        const emojis = ['✨', '🌸', '💖', '🎵', '🎀', '🎮']; // Added a game controller!
 
         function createParticle() {
             const particle = document.createElement('div');
             particle.classList.add('magic-particle');
             
-            // Pick a random emoji from our list
             particle.innerText = emojis[Math.floor(Math.random() * emojis.length)];
             
-            // Randomize horizontal starting position, speed, size, and opacity
             particle.style.left = Math.random() * 100 + 'vw';
-            particle.style.animationDuration = Math.random() * 4 + 4 + 's'; // falls over 4 to 8 seconds
-            particle.style.fontSize = Math.random() * 1.5 + 0.5 + 'rem'; // Random sizes
-            particle.style.opacity = Math.random() * 0.5 + 0.3; // Random transparency
+            particle.style.animationDuration = Math.random() * 4 + 6 + 's'; // Slower fall (6-10s)
+            particle.style.fontSize = Math.random() * 1.5 + 0.5 + 'rem';
+            particle.style.opacity = Math.random() * 0.4 + 0.2; 
             
             particleContainer.appendChild(particle);
 
-            // Clean up the particle after it falls off screen to keep the page running smoothly
             setTimeout(() => {
                 particle.remove();
-            }, 8000);
+            }, 10000);
         }
 
-        // Create a new particle every 400 milliseconds!
-        setInterval(createParticle, 400);
+        // Create particles slightly less often to prevent overwhelming the longer scrolling page
+        setInterval(createParticle, 600);
     </script>
 </body>
 </html>
