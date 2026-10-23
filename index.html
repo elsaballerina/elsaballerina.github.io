@@ -132,6 +132,17 @@
     <button id="theme-toggle" class="fixed top-4 right-4 sm:top-6 sm:right-6 z-50 glass-panel p-3 rounded-full text-xl hover:scale-110 transition-transform cursor-pointer shadow-lg" title="Toggle Light/Dark Mode">
         <i class="fas fa-moon text-indigo-500 transition-colors" id="theme-icon"></i>
     </button>
+    
+    <!-- Soft Background Music Element -->
+    <audio id="bg-music" loop>
+        <source src="A_Quiet_Place_to_Land.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+
+    <!-- Music Toggle Button -->
+    <button id="music-toggle" class="fixed top-20 right-4 sm:top-24 sm:right-6 z-50 glass-panel p-3 rounded-full text-xl hover:scale-110 transition-transform cursor-pointer shadow-lg" title="Play/Pause Music">
+        <i class="fas fa-play text-pink-500 transition-colors" id="music-icon"></i>
+    </button>
 
     <!-- Main Content Wrapper -->
     <main class="relative z-10 max-w-5xl mx-auto px-4 pt-12 flex flex-col items-center gap-10">
@@ -383,6 +394,28 @@
                 themeIcon.classList.remove('fa-sun', 'text-yellow-300');
                 themeIcon.classList.add('fa-moon', 'text-indigo-500');
             }
+        });
+
+        // --- 6. BACKGROUND MUSIC TOGGLE LOGIC ---
+        const bgMusic = document.getElementById('bg-music');
+        const musicToggleBtn = document.getElementById('music-toggle');
+        const musicIcon = document.getElementById('music-icon');
+        let isMusicPlaying = false;
+
+        // Start with the volume lowered to match the soft, relaxing vibe
+        bgMusic.volume = 0.3; 
+
+        musicToggleBtn.addEventListener('click', () => {
+            if (isMusicPlaying) {
+                bgMusic.pause();
+                musicIcon.classList.remove('fa-pause');
+                musicIcon.classList.add('fa-play');
+            } else {
+                bgMusic.play();
+                musicIcon.classList.remove('fa-play');
+                musicIcon.classList.add('fa-pause');
+            }
+            isMusicPlaying = !isMusicPlaying;
         });
     </script>
 </body>
