@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Elsa Ballerina</title>
+    <title>🩰Elsa Ballerina🩰</title>
     
     <!-- Cute Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Quicksand:wght@500;700&display=swap" rel="stylesheet">
@@ -196,8 +196,8 @@
                 <p class="text-blue-800 font-medium text-sm sm:text-base">Click any card to copy my ID to your clipboard so we can connect!</p>
             </div>
             
-            <!-- Grid of Accounts -->
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5" id="connections-grid">
+            <!-- Grid of Accounts with auto-rows-fr for equal heights -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 auto-rows-fr" id="connections-grid">
                 <!-- Javascript will inject the cards here -->
             </div>
         </section>
@@ -274,7 +274,8 @@
         accounts.forEach(acc => {
             const card = document.createElement('div');
             card.setAttribute('data-copy', acc.id);
-            card.className = "game-card glass-panel rounded-2xl p-4 flex items-center gap-4 cursor-pointer";
+            // h-full added here to make all cards perfectly equal in height!
+            card.className = "game-card glass-panel rounded-2xl p-4 flex items-center gap-4 cursor-pointer h-full";
             
             let descHtml = acc.desc ? `<p class="text-xs text-gray-600 mt-1">${acc.desc}</p>` : '';
 
