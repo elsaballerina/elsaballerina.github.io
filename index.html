@@ -1,9 +1,154 @@
 <!DOCTYPE html>
-<html>
-<body style="background-color:powderblue;">
-<title>Elsa Ballerina</title>  
-<h1>🩰Elsa Ballerina🩰</h1>
-<p>😊My Testing Page😊</p>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Elsa Ballerina</title>
+    
+    <!-- Importing cute Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Quicksand:wght@500;700&display=swap" rel="stylesheet">
+    
+    <!-- Importing Tailwind CSS for easy, beautiful layouts -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Custom Styles for Animations and Glassmorphism -->
+    <style>
+        body {
+            /* A beautiful pastel blue and pink gradient background */
+            background: linear-gradient(135deg, #a1c4fd 0%, #ffdde1 100%);
+            font-family: 'Quicksand', sans-serif;
+            overflow: hidden; /* Keeps the falling sparkles from creating scrollbars */
+            margin: 0;
+            height: 100vh;
+        }
 
+        .cursive-title {
+            font-family: 'Dancing Script', cursive;
+        }
+
+        /* The glassmorphism card effect */
+        .glass-card {
+            background: rgba(255, 255, 255, 0.4);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 2px solid rgba(255, 255, 255, 0.6);
+            box-shadow: 0 8px 32px 0 rgba(255, 182, 193, 0.4); /* soft pink shadow */
+        }
+
+        /* Twirl Animation Keyframes */
+        @keyframes twirl-action {
+            0% { transform: rotate(0deg) scale(1); }
+            50% { transform: rotate(180deg) scale(1.3); } /* Gets slightly bigger halfway through! */
+            100% { transform: rotate(360deg) scale(1); }
+        }
+
+        .twirl-anim {
+            animation: twirl-action 1s ease-in-out;
+        }
+
+        /* Falling Sparkles & Flowers styling */
+        .magic-particle {
+            position: fixed;
+            top: -10%;
+            user-select: none;
+            pointer-events: none; /* So clicks pass through to the button */
+            animation: fall linear infinite;
+            z-index: 0;
+        }
+
+        @keyframes fall {
+            to {
+                transform: translateY(115vh) rotate(360deg);
+            }
+        }
+    </style>
+</head>
+<body class="flex items-center justify-center relative">
+
+    <!-- Container for our magical falling particles -->
+    <div id="particle-container" class="absolute inset-0 w-full h-full"></div>
+
+    <!-- Main Glass Card Content -->
+    <div class="glass-card z-10 rounded-3xl p-10 text-center max-w-sm mx-4 transform transition-all hover:scale-105 duration-300">
+        
+        <!-- The Ballerina Emoji -->
+        <div id="ballerina-emoji" class="text-7xl mb-4 inline-block origin-center cursor-pointer drop-shadow-md">
+            🩰
+        </div>
+        
+        <!-- The Title -->
+        <h1 class="cursive-title text-5xl text-pink-500 mb-2 drop-shadow-sm font-bold">
+            Elsa Ballerina
+        </h1>
+        
+        <!-- Subtitle -->
+        <p class="text-blue-900 text-lg mb-8 font-medium">
+            😊 My Magical Testing Page 😊
+        </p>
+        
+        <!-- Interactive Button -->
+        <button id="twirl-btn" class="bg-gradient-to-r from-pink-400 to-pink-300 text-white font-bold py-3 px-8 rounded-full shadow-lg hover:shadow-pink-500/50 hover:-translate-y-1 transition-all active:translate-y-1 active:scale-95 text-lg">
+            Click to Twirl! ✨
+        </button>
+        
+    </div>
+
+    <!-- Javascript to make it interactive -->
+    <script>
+        // --- 1. TWIRL ANIMATION LOGIC ---
+        const twirlBtn = document.getElementById('twirl-btn');
+        const ballerinaEmoji = document.getElementById('ballerina-emoji');
+
+        // When the button is clicked, add the twirl animation class
+        twirlBtn.addEventListener('click', () => {
+            // Remove the class first so we can click it multiple times
+            ballerinaEmoji.classList.remove('twirl-anim');
+            
+            // A little trick to restart CSS animations
+            void ballerinaEmoji.offsetWidth; 
+            
+            // Add it back to trigger the spin
+            ballerinaEmoji.classList.add('twirl-anim');
+            
+            // Occasionally switch the emoji for extra fun!
+            setTimeout(() => {
+                ballerinaEmoji.innerText = ballerinaEmoji.innerText === '🩰' ? '💃' : '🩰';
+            }, 500); // Changes right in the middle of the spin
+        });
+
+        // Also let the user click the emoji directly to twirl!
+        ballerinaEmoji.addEventListener('click', () => {
+            twirlBtn.click();
+        });
+
+
+        // --- 2. FALLING SPARKLES & BLOSSOMS LOGIC ---
+        const particleContainer = document.getElementById('particle-container');
+        const emojis = ['✨', '🌸', '💖', '🎵']; // Things that will fall from the sky
+
+        function createParticle() {
+            const particle = document.createElement('div');
+            particle.classList.add('magic-particle');
+            
+            // Pick a random emoji from our list
+            particle.innerText = emojis[Math.floor(Math.random() * emojis.length)];
+            
+            // Randomize horizontal starting position, speed, size, and opacity
+            particle.style.left = Math.random() * 100 + 'vw';
+            particle.style.animationDuration = Math.random() * 4 + 4 + 's'; // falls over 4 to 8 seconds
+            particle.style.fontSize = Math.random() * 1.5 + 0.5 + 'rem'; // Random sizes
+            particle.style.opacity = Math.random() * 0.5 + 0.3; // Random transparency
+            
+            particleContainer.appendChild(particle);
+
+            // Clean up the particle after it falls off screen to keep the page running smoothly
+            setTimeout(() => {
+                particle.remove();
+            }, 8000);
+        }
+
+        // Create a new particle every 400 milliseconds!
+        setInterval(createParticle, 400);
+    </script>
 </body>
 </html>
