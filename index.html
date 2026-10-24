@@ -129,7 +129,7 @@
             color: #e2e8f0;
         }
         body.dark .form-input:focus {
-            border-color: #a5b4fc; /* Indigo highlight in dark mode */
+            border-color: #a5b4fc; 
         }
     </style>
 </head>
@@ -154,6 +154,12 @@
         <i class="fas fa-play text-pink-500 transition-colors" id="music-icon"></i>
     </button>
 
+    <!-- Language Toggle Button -->
+    <button id="lang-toggle" class="fixed top-36 right-4 sm:top-40 sm:right-6 z-50 glass-panel px-4 py-3 rounded-full hover:scale-110 transition-transform cursor-pointer shadow-lg flex items-center gap-2" title="Translate / Traduire">
+        <i class="fas fa-globe text-blue-500 text-xl"></i>
+        <span id="lang-text" class="text-sm font-bold text-gray-700 dark:text-gray-200">FR</span>
+    </button>
+
     <!-- Main Content Wrapper -->
     <main class="relative z-10 max-w-5xl mx-auto px-4 pt-12 flex flex-col items-center gap-10">
         
@@ -170,25 +176,23 @@
             <h1 class="cursive-title text-5xl sm:text-6xl text-pink-500 mb-2 drop-shadow-sm font-bold">
                 Elsa Ballerina
             </h1>
-            <p class="text-blue-900 text-lg font-medium">
+            <p class="text-blue-900 text-lg font-medium" data-i18n="subtitle">
                 🎀 My Magical Digital Home 🎀
             </p>            
         </header>
 
         <!-- ABOUT ME SECTION -->
         <section class="glass-panel rounded-3xl p-8 w-full">
-            <h2 class="cursive-title text-4xl text-pink-500 mb-4 border-b-2 border-pink-200 pb-2 inline-block">✨ About Me</h2>
+            <h2 class="cursive-title text-4xl text-pink-500 mb-4 border-b-2 border-pink-200 pb-2 inline-block" data-i18n="aboutTitle">✨ About Me</h2>
             <div class="text-lg leading-relaxed space-y-4 text-gray-800">
-                <p>
-                    Hi Everyone! 👋
-                </p>
-                <p>
+                <p data-i18n="aboutP1">Hi Everyone! 👋</p>
+                <p data-i18n="aboutP2">
                     I am called <strong>Elsa Ballerina</strong> on social media and I am a proud trans woman, part of the LGBTQIA+ community.
                 </p>
-                <p>
+                <p data-i18n="aboutP3">
                     My gaming history is deeply intertwined with PC gaming. I started with classics like Bungie's <em>Marathon</em> on a Power Mac and moved through the era of id Software's <em>Quake</em> and <em>DOOM</em>, not forgetting the intense Sierra Online <em>Half-Life</em> deathmatches. 
                 </p>
-                <p>
+                <p data-i18n="aboutP4">
                     These games connected me with a community, whether through GameSpy, C3, or Discord. Sure, those cumulative hours could have earned me four PhDs! But while gaming might have been a distraction from academia, it offered something just as valuable: a safe, sane, and far more affordable form of entertainment. 💖
                 </p>
             </div>
@@ -199,13 +203,13 @@
             <div class="flex flex-col md:flex-row items-center gap-8">
                 <img src="Ballet%20of%20Death.jpg" alt="Ballet of Death Logo" class="w-48 h-48 rounded-2xl shadow-lg border-2 border-pink-300" onerror="this.src='https://placehold.co/200x200/111/ffb6c1?text=Ballet+of+Death'">
                 <div class="flex-1 text-center md:text-left">
-                    <h2 class="cursive-title text-4xl text-pink-500 mb-2">🩰 Ballet of Death 🩰</h2>
-                    <p class="text-gray-800 text-lg mb-4">
+                    <h2 class="cursive-title text-4xl text-pink-500 mb-2" data-i18n="discordTitle">🩰 Ballet of Death 🩰</h2>
+                    <p class="text-gray-800 text-lg mb-4" data-i18n="discordDesc">
                         Join my official Discord community! We'd love to have you hang out, chat about games, and share some magical moments.
                     </p>
                     <div class="flex flex-col sm:flex-row items-center gap-4 justify-center md:justify-start">
                         <a href="https://discord.gg/9Tt2en59z6" target="_blank" rel="noopener noreferrer" class="bg-indigo-500 hover:bg-indigo-600 text-white font-bold py-3 px-6 rounded-full shadow-lg transition-transform hover:scale-105 flex items-center gap-2">
-                            <i class="fab fa-discord text-xl"></i> Join the Server
+                            <i class="fab fa-discord text-xl"></i> <span data-i18n="joinServer">Join the Server</span>
                         </a>
                         <span class="text-sm font-bold text-indigo-800 bg-indigo-100 px-4 py-2 rounded-full">Code: 9Tt2en59z6</span>
                     </div>
@@ -216,8 +220,8 @@
         <!-- GAMING CONNECTIONS SECTION -->
         <section class="w-full">
             <div class="text-center mb-6">
-                <h2 class="cursive-title text-4xl text-pink-500 mb-2">🎮 My Connections 🎮</h2>
-                <p class="text-blue-800 font-medium text-sm sm:text-base">Click any card to open a new web browser tab!</p>
+                <h2 class="cursive-title text-4xl text-pink-500 mb-2" data-i18n="connTitle">🎮 My Connections 🎮</h2>
+                <p class="text-blue-800 font-medium text-sm sm:text-base" data-i18n="connDesc">Click any card to open a new web browser tab!</p>
             </div>
             
             <!-- Grid of Accounts with auto-rows-fr for equal heights -->
@@ -228,22 +232,22 @@
 
         <!-- LORE SECTION -->
         <section class="glass-panel rounded-3xl p-8 w-full">
-            <h2 class="cursive-title text-4xl text-pink-500 mb-6 border-b-2 border-pink-200 pb-2 inline-block">📖 The Lore of My Names</h2>
+            <h2 class="cursive-title text-4xl text-pink-500 mb-6 border-b-2 border-pink-200 pb-2 inline-block" data-i18n="loreTitle">📖 The Lore of My Names</h2>
             <div class="space-y-6">
                 
                 <div class="bg-white/40 p-5 rounded-2xl border border-white/60 shadow-sm hover:shadow-md transition-shadow">
                     <h3 class="font-bold text-xl text-blue-900 mb-2 flex items-center gap-2">🛡️ soulpaladin</h3>
-                    <p class="text-gray-800 leading-relaxed">This nickname was gifted to me around the time Hotmail launched, inspired by the classical game on floppy-disks called <em>Warlords</em>. It stuck!</p>
+                    <p class="text-gray-800 leading-relaxed" data-i18n="lore1">This nickname was gifted to me around the time Hotmail launched, inspired by the classical game on floppy-disks called <em>Warlords</em>. It stuck!</p>
                 </div>
 
                 <div class="bg-white/40 p-5 rounded-2xl border border-white/60 shadow-sm hover:shadow-md transition-shadow">
                     <h3 class="font-bold text-xl text-blue-900 mb-2 flex items-center gap-2">🌸 Yuiko</h3>
-                    <p class="text-gray-800 leading-relaxed">This nickname came from a Japanese anime TV show that I once used to watch on Winamp. I can't recall the exact title, but I think it was related to a summer hotel and a cleaning lady called Yuiko.</p>
+                    <p class="text-gray-800 leading-relaxed" data-i18n="lore2">This nickname came from a Japanese anime TV show that I once used to watch on Winamp. I can't recall the exact title, but I think it was related to a summer hotel and a cleaning lady called Yuiko.</p>
                 </div>
 
                 <div class="bg-white/40 p-5 rounded-2xl border border-white/60 shadow-sm hover:shadow-md transition-shadow">
                     <h3 class="font-bold text-xl text-pink-600 mb-2 flex items-center gap-2">🩰 Elsa Ballerina</h3>
-                    <p class="text-gray-800 leading-relaxed">This nickname doesn't come from the popular 2013 film <em>Frozen</em>! It was suggested to me by a close person many moons ago. "Ballerina" comes from <em>Les Ballets Trockadero de Monte Carlo</em>, and my clan name (Ballet of Death) came from watching an awesome video on YouTube called <a href="https://www.youtube.com/watch?v=cWs4WA--eKU" target="_blank" rel="noopener noreferrer" class="text-pink-500 font-bold hover:underline hover:text-pink-700 transition-colors"><em>The Gunfighter</em></a>.</p>
+                    <p class="text-gray-800 leading-relaxed" data-i18n="lore3">This nickname doesn't come from the popular 2013 film <em>Frozen</em>! It was suggested to me by a close person many moons ago. "Ballerina" comes from <em>Les Ballets Trockadero de Monte Carlo</em>, and my clan name (Ballet of Death) came from watching an awesome video on YouTube called <a href="https://www.youtube.com/watch?v=cWs4WA--eKU" target="_blank" rel="noopener noreferrer" class="text-pink-500 font-bold hover:underline hover:text-pink-700 transition-colors"><em>The Gunfighter</em></a>.</p>
                 </div>
 
             </div>
@@ -251,9 +255,9 @@
 
         <!-- DEEP REFLECTION ABOUT ME SECTION -->
         <section class="glass-panel rounded-3xl p-8 w-full">
-            <h2 class="cursive-title text-4xl text-pink-500 mb-4 border-b-2 border-pink-200 pb-2 inline-block">🦄 About Me</h2>
+            <h2 class="cursive-title text-4xl text-pink-500 mb-4 border-b-2 border-pink-200 pb-2 inline-block" data-i18n="reflTitle">🦄 About Me</h2>
             <div class="text-lg leading-relaxed text-gray-800">
-                <p>
+                <p data-i18n="reflDesc">
                     Holding a Steam account since 2003, I’ve collected decades of digital experiences. This long history prompts the thought: "I hope my profile endures long after I'm gone." Contemplating this passage of time deepens my appreciation for life’s simpler moments. I now consciously focus on staying present in the 'now,' even when it's a daily effort. Recognizing what I cannot change about the past fuels my commitment to shaping a better future.
                 </p>
             </div>
@@ -261,12 +265,11 @@
 
         <!-- CONTACT ME SECTION -->
         <section class="glass-panel rounded-3xl p-8 w-full mb-10">
-            <h2 class="cursive-title text-4xl text-pink-500 mb-4 border-b-2 border-pink-200 pb-2 inline-block">💌 Get In Touch</h2>
-            <p class="text-gray-800 text-lg mb-6 leading-relaxed">
+            <h2 class="cursive-title text-4xl text-pink-500 mb-4 border-b-2 border-pink-200 pb-2 inline-block" data-i18n="contactTitle">💌 Get In Touch</h2>
+            <p class="text-gray-800 text-lg mb-6 leading-relaxed" data-i18n="contactDesc">
                 Want to say hi, share a game recommendation, or just spread some magic? Send me a message! ✨
             </p>
             
-            <!-- Replace YOUR_FORM_ID with the ID you get from Formspree.io -->
             <form action="https://formspree.io/f/xwllkdqq" method="POST" class="space-y-5">
                 
                 <!-- Anti-Spam Honeypot: Real humans won't see this, but bots will get trapped! -->
@@ -274,23 +277,23 @@
                 
                 <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
                     <div class="flex flex-col">
-                        <label for="name" class="font-bold text-pink-600 mb-2 pl-2">Your Name</label>
-                        <input type="text" id="name" name="name" required class="form-input rounded-2xl p-4 border-2 border-pink-200 bg-white/60 focus:outline-none focus:border-pink-400 focus:ring-4 focus:ring-pink-100 transition-all shadow-sm text-gray-800" placeholder="Elsa">
+                        <label for="name" class="font-bold text-pink-600 mb-2 pl-2" data-i18n="nameLabel">Your Name</label>
+                        <input type="text" id="name" name="name" required class="form-input rounded-2xl p-4 border-2 border-pink-200 bg-white/60 focus:outline-none focus:border-pink-400 focus:ring-4 focus:ring-pink-100 transition-all shadow-sm text-gray-800" data-i18n-placeholder="namePh" placeholder="Elsa">
                     </div>
                     <div class="flex flex-col">
-                        <label for="email" class="font-bold text-pink-600 mb-2 pl-2">Your Email</label>
-                        <input type="email" id="email" name="email" required class="form-input rounded-2xl p-4 border-2 border-pink-200 bg-white/60 focus:outline-none focus:border-pink-400 focus:ring-4 focus:ring-pink-100 transition-all shadow-sm text-gray-800" placeholder="magic@example.com">
+                        <label for="email" class="font-bold text-pink-600 mb-2 pl-2" data-i18n="emailLabel">Your Email</label>
+                        <input type="email" id="email" name="email" required class="form-input rounded-2xl p-4 border-2 border-pink-200 bg-white/60 focus:outline-none focus:border-pink-400 focus:ring-4 focus:ring-pink-100 transition-all shadow-sm text-gray-800" data-i18n-placeholder="emailPh" placeholder="magic@example.com">
                     </div>
                 </div>
                 
                 <div class="flex flex-col">
-                    <label for="message" class="font-bold text-pink-600 mb-2 pl-2">Your Message</label>
-                    <textarea id="message" name="message" rows="5" required class="form-input rounded-2xl p-4 border-2 border-pink-200 bg-white/60 focus:outline-none focus:border-pink-400 focus:ring-4 focus:ring-pink-100 transition-all shadow-sm text-gray-800 resize-y" placeholder="Hi there! Just wanted to say..."></textarea>
+                    <label for="message" class="font-bold text-pink-600 mb-2 pl-2" data-i18n="msgLabel">Your Message</label>
+                    <textarea id="message" name="message" rows="5" required class="form-input rounded-2xl p-4 border-2 border-pink-200 bg-white/60 focus:outline-none focus:border-pink-400 focus:ring-4 focus:ring-pink-100 transition-all shadow-sm text-gray-800 resize-y" data-i18n-placeholder="msgPh" placeholder="Hi there! Just wanted to say..."></textarea>
                 </div>
                 
                 <div class="text-center sm:text-left pt-2">
                     <button type="submit" class="bg-gradient-to-r from-pink-400 to-pink-500 hover:from-pink-500 hover:to-pink-600 text-white font-bold py-3 px-8 rounded-full shadow-lg transition-transform hover:scale-105 flex items-center justify-center gap-3 mx-auto sm:mx-0 w-full sm:w-auto text-lg">
-                        <i class="fas fa-paper-plane"></i> Send Message
+                        <i class="fas fa-paper-plane"></i> <span data-i18n="sendBtn">Send Message</span>
                     </button>
                 </div>
             </form>
@@ -298,133 +301,93 @@
 
     </main>
 
-    <!-- Cute Toast Notification -->
-    <div id="toast" class="bg-pink-500 text-white px-6 py-3 rounded-full shadow-xl font-bold flex items-center gap-3">
-        <i class="fas fa-magic"></i> <span id="toast-msg">Copied!</span> <i class="fas fa-sparkles"></i>
-    </div>
-
     <!-- Javascript -->
     <script>
         // --- 1. SOCIAL & GAMING ACCOUNTS DATA ---
         const accounts = [
-            { platform: "NightCafe", id: "AI_Genderless", desc: "(Ai Videos & Images)", icon: "fas fa-palette", color: "text-fuchsia-600", link: "https://creator.nightcafe.studio/u/AI_Genderless" },
-            { platform: "Suno", id: "@ai_genderless", desc: "(Ai Music)", icon: "fas fa-music", color: "text-orange-500", link: "https://suno.com/@ai_genderless" },
-            { platform: "Steam", id: "Elsa Ballerina", desc: "(Used to be: soulpaladin)", icon: "fab fa-steam", color: "text-blue-900", link: "https://steamcommunity.com/id/elsaballerina/" },
-            { platform: "Discord", id: "elsaballerina", desc: "(Server: 🩰Ballet of Death🩰)", icon: "fab fa-discord", color: "text-indigo-600", link: "https://discord.com/" },
+            { platform: "NightCafe", id: "AI_Genderless", desc_en: "(Ai Videos & Images)", desc_fr: "(Vidéos et Images IA)", icon: "fas fa-palette", color: "text-fuchsia-600", link: "https://creator.nightcafe.studio/u/AI_Genderless" },
+            { platform: "Suno", id: "@ai_genderless", desc_en: "(Ai Music)", desc_fr: "(Musique IA)", icon: "fas fa-music", color: "text-orange-500", link: "https://suno.com/@ai_genderless" },
+            { platform: "Steam", id: "Elsa Ballerina", desc_en: "(Used to be: soulpaladin)", desc_fr: "(Anciennement : soulpaladin)", icon: "fab fa-steam", color: "text-blue-900", link: "https://steamcommunity.com/id/elsaballerina/" },
+            { platform: "Discord", id: "elsaballerina", desc_en: "(Server: 🩰Ballet of Death🩰)", desc_fr: "(Serveur : 🩰Ballet of Death🩰)", icon: "fab fa-discord", color: "text-indigo-600", link: "https://discord.com/" },
             { platform: "Xbox", id: "BalletPointe", icon: "fab fa-xbox", color: "text-green-600", link: "https://www.xbox.com/" },
             { platform: "Facebook", id: "Elsa Ballerina", icon: "fab fa-facebook", color: "text-blue-600", link: "https://www.facebook.com/" },
             { platform: "X (Twitter)", id: "ElsaBallerina", icon: "fab fa-x-twitter", color: "text-gray-900", link: "https://www.x.com/@ElsaBallerina" },
             { platform: "Twitch", id: "elsaballerina", icon: "fab fa-twitch", color: "text-purple-600", link: "https://www.twitch.tv/elsaballerina" },
             { platform: "Reddit", id: "ElsaBallet", icon: "fab fa-reddit", color: "text-orange-600", link: "https://www.reddit.com/u/ElsaBallet/" },
             { platform: "YouTube", id: "Elsa Ballerina", icon: "fab fa-youtube", color: "text-red-600", link: "https://www.youtube.com/@ElsaBallerina" },
-            { platform: "Blizzard", id: "ElsaBallet#1940", desc: "Also: Ballerina#11220", icon: "fab fa-battle-net", color: "text-blue-500", link: "https://www.blizzard.com/" },
+            { platform: "Blizzard", id: "ElsaBallet#1940", desc_en: "Also: Ballerina#11220", desc_fr: "Aussi : Ballerina#11220", icon: "fab fa-battle-net", color: "text-blue-500", link: "https://www.blizzard.com/" },
             { platform: "Epic Games", id: "Elsa Ballerina", icon: "fas fa-gamepad", color: "text-gray-800", link: "https://www.epicgames.com/" },
-            { platform: "Ubisoft", id: "ElsaBallerina", desc: "(Used to be: Yuiko)", icon: "fas fa-gamepad", color: "text-blue-700", link: "https://www.ubisoft.com/" },
+            { platform: "Ubisoft", id: "ElsaBallerina", desc_en: "(Used to be: Yuiko)", desc_fr: "(Anciennement : Yuiko)", icon: "fas fa-gamepad", color: "text-blue-700", link: "https://www.ubisoft.com/" },
             { platform: "Electronic Arts", id: "ElsaBallerina", icon: "fas fa-gamepad", color: "text-red-700", link: "https://www.ea.com/" },
             { platform: "GOG", id: "Elsa Ballerina", icon: "fas fa-gamepad", color: "text-purple-800", link: "https://www.gog.com/" },
             { platform: "Activision", id: "Elsa Ballerina#3650968", icon: "fas fa-crosshairs", color: "text-gray-800", link: "https://www.activision.com/" },
-            { platform: "Bungie", id: "Ballerina#2773", desc: "(Used to be: soulpaladin)", icon: "fas fa-rocket", color: "text-gray-700", link: "https://www.bungie.net/" },
-            { platform: "ArenaNet", id: "Ballerina.9106", desc: "(Guild Wars 2)", icon: "fas fa-dragon", color: "text-red-800", link: "https://www.arena.net/" },
+            { platform: "Bungie", id: "Ballerina#2773", desc_en: "(Used to be: soulpaladin)", desc_fr: "(Anciennement : soulpaladin)", icon: "fas fa-rocket", color: "text-gray-700", link: "https://www.bungie.net/" },
+            { platform: "ArenaNet", id: "Ballerina.9106", desc_en: "(Guild Wars 2)", desc_fr: "(Guild Wars 2)", icon: "fas fa-dragon", color: "text-red-800", link: "https://www.arena.net/" },
             { platform: "Nintendo", id: "SW-0034-0920-3926", icon: "fas fa-gamepad", color: "text-red-600", link: "https://www.nintendo.com/" },
-            { platform: "HoYoLAB", id: "UID: 636834676", desc: "(Genshin Impact)", icon: "fas fa-star", color: "text-yellow-600", link: "https://www.hoyolab.com/accountCenter?id=165829571" },
-            { platform: "Gryphline", id: "UID: 6271456168", desc: "(Arknights Endfield)", icon: "fas fa-cube", color: "text-teal-600", link: "https://www.gryphline.com/" },
+            { platform: "HoYoLAB", id: "UID: 636834676", desc_en: "(Genshin Impact)", desc_fr: "(Genshin Impact)", icon: "fas fa-star", color: "text-yellow-600", link: "https://www.hoyolab.com/accountCenter?id=165829571" },
+            { platform: "Gryphline", id: "UID: 6271456168", desc_en: "(Arknights Endfield)", desc_fr: "(Arknights Endfield)", icon: "fas fa-cube", color: "text-teal-600", link: "https://www.gryphline.com/" }
         ];
 
-        const grid = document.getElementById('connections-grid');
-        
-        accounts.forEach(acc => {
-            const card = document.createElement('div');
-            card.setAttribute('data-copy', acc.id);
-            // h-full added here to make all cards perfectly equal in height!
-            card.className = "game-card glass-panel rounded-2xl p-4 flex items-center gap-4 cursor-pointer h-full";
+        function renderGrid(lang) {
+            const grid = document.getElementById('connections-grid');
+            grid.innerHTML = ''; // Clear current grid
             
-            let descHtml = acc.desc ? `<p class="text-xs text-gray-600 mt-1">${acc.desc}</p>` : '';
+            accounts.forEach(acc => {
+                const card = document.createElement('div');
+                card.className = "game-card glass-panel rounded-2xl p-4 flex items-center gap-4 cursor-pointer h-full";
+                
+                // Select correct description language
+                const descText = lang === 'fr' && acc.desc_fr ? acc.desc_fr : (acc.desc_en ? acc.desc_en : '');
+                let descHtml = descText ? `<p class="text-xs text-gray-600 mt-1">${descText}</p>` : '';
 
-            card.innerHTML = `
-                <div class="text-3xl w-12 text-center ${acc.color}">
-                    <i class="${acc.icon}"></i>
-                </div>
-                <div class="flex-1">
-                    <h3 class="font-bold text-gray-800 text-sm uppercase tracking-wider">${acc.platform}</h3>
-                    <p class="text-pink-600 font-medium">${acc.id}</p>
-                    ${descHtml}
-                </div>
-            `;
-            
-            // Add click event for copying or linking
-            card.addEventListener('click', function() {
-                if (acc.link) {
+                card.innerHTML = `
+                    <div class="text-3xl w-12 text-center ${acc.color}">
+                        <i class="${acc.icon}"></i>
+                    </div>
+                    <div class="flex-1">
+                        <h3 class="font-bold text-gray-800 text-sm uppercase tracking-wider">${acc.platform}</h3>
+                        <p class="text-pink-600 font-medium">${acc.id}</p>
+                        ${descHtml}
+                    </div>
+                `;
+                
+                card.addEventListener('click', function() {
                     window.open(acc.link, '_blank');
-                } else {
-                    const textToCopy = this.getAttribute('data-copy');
-                    copyToClipboard(textToCopy, acc.platform);
-                }
+                });
+
+                grid.appendChild(card);
             });
-
-            grid.appendChild(card);
-        });
-
-        // --- 2. COPY TO CLIPBOARD LOGIC ---
-        const toast = document.getElementById('toast');
-        const toastMsg = document.getElementById('toast-msg');
-        let toastTimeout;
-
-        function copyToClipboard(text, platformName) {
-            const tempInput = document.createElement("textarea");
-            tempInput.value = text;
-            document.body.appendChild(tempInput);
-            tempInput.select();
-            document.execCommand("copy");
-            document.body.removeChild(tempInput);
-
-            // Show cute toast message
-            toastMsg.innerText = `Copied ${platformName} ID!`;
-            toast.classList.add('show');
-            
-            clearTimeout(toastTimeout);
-            toastTimeout = setTimeout(() => {
-                toast.classList.remove('show');
-            }, 3000);
         }
 
-        // --- 3. TWIRL ANIMATION LOGIC FOR AVATAR ---
+        // --- 2. TWIRL ANIMATION LOGIC FOR AVATAR ---
         const profilePic = document.getElementById('profile-pic');
-
         profilePic.addEventListener('click', () => {
             profilePic.classList.remove('twirl-anim');
             void profilePic.offsetWidth; // trigger browser reflow
             profilePic.classList.add('twirl-anim');
         });
 
-        // --- 4. FALLING SPARKLES LOGIC ---
+        // --- 3. FALLING SPARKLES LOGIC ---
         const particleContainer = document.getElementById('particle-container');
         const emojis = ['✨', '🌸', '💖', '🩰', '🎀', '🎮', '🎵']; 
 
         function createParticle() {
             const particle = document.createElement('div');
             particle.classList.add('magic-particle');
-            
             particle.innerText = emojis[Math.floor(Math.random() * emojis.length)];
-            
             particle.style.left = Math.random() * 100 + 'vw';
-            particle.style.animationDuration = Math.random() * 5 + 7 + 's'; // Fall between 7s and 12s
+            particle.style.animationDuration = Math.random() * 5 + 7 + 's';
             particle.style.fontSize = Math.random() * 1.5 + 0.8 + 'rem';
             particle.style.opacity = Math.random() * 0.4 + 0.2; 
-            
             particleContainer.appendChild(particle);
-
-            setTimeout(() => {
-                particle.remove();
-            }, 12000);
+            setTimeout(() => { particle.remove(); }, 12000);
         }
+        setInterval(createParticle, 500);
 
-        setInterval(createParticle, 500); // Create a new particle every half second
-
-        // --- 5. LIGHT/DARK MODE TOGGLE LOGIC ---
+        // --- 4. LIGHT/DARK MODE TOGGLE LOGIC ---
         const themeToggleBtn = document.getElementById('theme-toggle');
         const themeIcon = document.getElementById('theme-icon');
         
-        // Check if user previously selected dark mode
         if (localStorage.getItem('color-theme') === 'dark') {
             document.body.classList.add('dark');
             themeIcon.classList.remove('fa-moon', 'text-indigo-500');
@@ -434,25 +397,21 @@
         themeToggleBtn.addEventListener('click', () => {
             document.body.classList.toggle('dark');
             if (document.body.classList.contains('dark')) {
-                // Switch to Dark Mode
                 localStorage.setItem('color-theme', 'dark');
                 themeIcon.classList.remove('fa-moon', 'text-indigo-500');
                 themeIcon.classList.add('fa-sun', 'text-yellow-300');
             } else {
-                // Switch to Light Mode
                 localStorage.setItem('color-theme', 'light');
                 themeIcon.classList.remove('fa-sun', 'text-yellow-300');
                 themeIcon.classList.add('fa-moon', 'text-indigo-500');
             }
         });
 
-        // --- 6. BACKGROUND MUSIC TOGGLE LOGIC ---
+        // --- 5. BACKGROUND MUSIC TOGGLE LOGIC ---
         const bgMusic = document.getElementById('bg-music');
         const musicToggleBtn = document.getElementById('music-toggle');
         const musicIcon = document.getElementById('music-icon');
         let isMusicPlaying = false;
-
-        // Start with the volume lowered to match the soft, relaxing vibe
         bgMusic.volume = 0.3; 
 
         musicToggleBtn.addEventListener('click', () => {
@@ -467,6 +426,110 @@
             }
             isMusicPlaying = !isMusicPlaying;
         });
+
+        // --- 6. BILINGUAL TRANSLATION LOGIC ---
+        const translations = {
+            en: {
+                subtitle: "🎀 My Magical Digital Home 🎀",
+                character: "🩰 Fictional Ballerina Character 🩰",
+                aboutTitle: "✨ About Me",
+                aboutP1: "Hi Everyone! 👋",
+                aboutP2: "I am called <strong>Elsa Ballerina</strong> on social media and I am a proud trans woman, part of the LGBTQIA+ community.",
+                aboutP3: "My gaming history is deeply intertwined with PC gaming. I started with classics like Bungie's <em>Marathon</em> on a Power Mac and moved through the era of id Software's <em>Quake</em> and <em>DOOM</em>, not forgetting the intense Sierra Online <em>Half-Life</em> deathmatches.",
+                aboutP4: "These games connected me with a community, whether through GameSpy, C3, or Discord. Sure, those cumulative hours could have earned me four PhDs! But while gaming might have been a distraction from academia, it offered something just as valuable: a safe, sane, and far more affordable form of entertainment. 💖",
+                discordTitle: "🩰 Ballet of Death 🩰",
+                discordDesc: "Join my official Discord community! We'd love to have you hang out, chat about games, and share some magical moments.",
+                joinServer: "Join the Server",
+                connTitle: "🎮 My Connections 🎮",
+                connDesc: "Click any card to open a new web browser tab!",
+                loreTitle: "📖 The Lore of My Names",
+                lore1: "This nickname was gifted to me around the time Hotmail launched, inspired by the classical game on floppy-disks called <em>Warlords</em>. It stuck!",
+                lore2: "This nickname came from a Japanese anime TV show that I once used to watch on Winamp. I can't recall the exact title, but I think it was related to a summer hotel and a cleaning lady called Yuiko.",
+                lore3: 'This nickname doesn\'t come from the popular 2013 film <em>Frozen</em>! It was suggested to me by a close person many moons ago. "Ballerina" comes from <em>Les Ballets Trockadero de Monte Carlo</em>, and my clan name (Ballet of Death) came from watching an awesome video on YouTube called <a href="https://www.youtube.com/watch?v=cWs4WA--eKU" target="_blank" rel="noopener noreferrer" class="text-pink-500 font-bold hover:underline hover:text-pink-700 transition-colors"><em>The Gunfighter</em></a>.',
+                reflTitle: "🦄 About Me",
+                reflDesc: "Holding a Steam account since 2003, I’ve collected decades of digital experiences. This long history prompts the thought: \"I hope my profile endures long after I'm gone.\" Contemplating this passage of time deepens my appreciation for life’s simpler moments. I now consciously focus on staying present in the 'now,' even when it's a daily effort. Recognizing what I cannot change about the past fuels my commitment to shaping a better future.",
+                contactTitle: "💌 Get In Touch",
+                contactDesc: "Want to say hi, share a game recommendation, or just spread some magic? Send me a message! ✨",
+                nameLabel: "Your Name",
+                emailLabel: "Your Email",
+                msgLabel: "Your Message",
+                sendBtn: "Send Message",
+                namePh: "Elsa",
+                emailPh: "magic@example.com",
+                msgPh: "Hi there! Just wanted to say..."
+            },
+            fr: {
+                subtitle: "🎀 Ma Maison Numérique Magique 🎀",
+                character: "🩰 Personnage de Ballerine Fictive 🩰",
+                aboutTitle: "✨ À Propos de Moi",
+                aboutP1: "Salut tout le monde! 👋",
+                aboutP2: "On m'appelle <strong>Elsa Ballerina</strong> sur les réseaux sociaux et je suis une femme trans fière, membre de la communauté LGBTQIA+.",
+                aboutP3: "Mon histoire avec les jeux vidéo est profondément liée au PC. J'ai commencé avec des classiques comme <em>Marathon</em> de Bungie sur un Power Mac et j'ai traversé l'époque de <em>Quake</em> et <em>DOOM</em> d'id Software, sans oublier les intenses matchs à mort de <em>Half-Life</em> de Sierra Online.",
+                aboutP4: "Ces jeux m'ont connectée à une communauté, que ce soit via GameSpy, C3 ou Discord. Bien sûr, ces heures accumulées auraient pu me valoir quatre doctorats ! Mais si le jeu a pu être une distraction, il a offert quelque chose d'aussi précieux : une forme de divertissement sûre, saine et beaucoup plus abordable. 💖",
+                discordTitle: "🩰 Ballet of Death 🩰",
+                discordDesc: "Rejoignez ma communauté Discord officielle ! Nous serions ravis de vous accueillir pour discuter de jeux et partager des moments magiques.",
+                joinServer: "Rejoindre le Serveur",
+                connTitle: "🎮 Mes Connexions 🎮",
+                connDesc: "Cliquez sur n'importe quelle carte pour ouvrir un nouvel onglet !",
+                loreTitle: "📖 L'Histoire de Mes Noms",
+                lore1: "Ce surnom m'a été offert à l'époque du lancement de Hotmail, inspiré par le jeu classique sur disquette appelé <em>Warlords</em>. Il est resté !",
+                lore2: "Ce surnom vient d'une série télévisée d'animation japonaise que je regardais autrefois sur Winamp. Je ne me souviens plus du titre exact, mais je crois que cela parlait d'un hôtel d'été et d'une femme de ménage nommée Yuiko.",
+                lore3: 'Ce surnom ne vient pas du célèbre film <em>La Reine des Neiges</em> de 2013 ! Il m'a été suggéré par un proche il y a bien longtemps. "Ballerina" vient des <em>Ballets Trockadero de Monte Carlo</em>, et le nom de mon clan (Ballet of Death) m'est venu en regardant une super vidéo sur YouTube appelée <a href="https://www.youtube.com/watch?v=cWs4WA--eKU" target="_blank" rel="noopener noreferrer" class="text-pink-500 font-bold hover:underline hover:text-pink-700 transition-colors"><em>The Gunfighter</em></a>.',
+                reflTitle: "🦄 À Propos de Moi",
+                reflDesc: "Ayant un compte Steam depuis 2003, j'ai accumulé des décennies d'expériences numériques. Cette longue histoire suscite cette réflexion : \"J'espère que mon profil perdurera longtemps après mon départ.\" Contempler ce passage du temps approfondit mon appréciation des moments simples de la vie. Je m'efforce consciemment de rester présente dans le 'maintenant', même si c'est un effort quotidien. Reconnaître ce que je ne peux pas changer du passé nourrit mon engagement à façonner un avenir meilleur.",
+                contactTitle: "💌 Contactez-Moi",
+                contactDesc: "Envie de dire bonjour, de partager une recommandation de jeu ou simplement de répandre un peu de magie ? Envoyez-moi un message ! ✨",
+                nameLabel: "Votre Nom",
+                emailLabel: "Votre Courriel",
+                msgLabel: "Votre Message",
+                sendBtn: "Envoyer le Message",
+                namePh: "Elsa",
+                emailPh: "magie@exemple.com",
+                msgPh: "Bonjour ! Je voulais juste dire..."
+            }
+        };
+
+        const langToggleBtn = document.getElementById('lang-toggle');
+        const langText = document.getElementById('lang-text');
+        let currentLang = localStorage.getItem('site-lang') || 'en';
+
+        function setLanguage(lang) {
+            // Translate all static HTML elements
+            document.querySelectorAll('[data-i18n]').forEach(el => {
+                const key = el.getAttribute('data-i18n');
+                if (translations[lang][key]) {
+                    el.innerHTML = translations[lang][key];
+                }
+            });
+            
+            // Translate form placeholders
+            document.querySelectorAll('[data-i18n-placeholder]').forEach(el => {
+                const key = el.getAttribute('data-i18n-placeholder');
+                if (translations[lang][key]) {
+                    el.placeholder = translations[lang][key];
+                }
+            });
+            
+            // Re-render the grid so the mini descriptions change
+            renderGrid(lang);
+            
+            // Show the OPPOSITE language on the button so users know what they are switching TO
+            if (lang === 'en') {
+                langText.innerText = 'FR';
+            } else {
+                langText.innerText = 'EN';
+            }
+            
+            localStorage.setItem('site-lang', lang);
+        }
+
+        langToggleBtn.addEventListener('click', () => {
+            currentLang = currentLang === 'en' ? 'fr' : 'en';
+            setLanguage(currentLang);
+        });
+
+        // Initialize on page load
+        setLanguage(currentLang);
     </script>
 </body>
 </html>
