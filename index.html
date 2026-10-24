@@ -156,9 +156,10 @@
     </button>
 
     <!-- Language Toggle Button -->
-    <button id="lang-toggle" class="fixed top-36 right-4 sm:top-[10.5rem] sm:right-6 z-50 glass-panel p-3 rounded-full text-xl hover:scale-110 transition-transform cursor-pointer shadow-lg flex items-center justify-center gap-1 min-w-[65px]" title="EN / FR-CA">
+    <button id="lang-toggle" class="fixed top-36 right-4 sm:top-[10.5rem] sm:right-6 z-50 glass-panel p-3 rounded-full text-xl hover:scale-110 transition-transform cursor-pointer shadow-lg flex items-center justify-center gap-1 min-w-[65px]" title="Change Language / Changer de langue">
         <i class="fas fa-globe-americas text-teal-500 transition-colors"></i>
-        <span id="lang-text" class="text-sm font-bold text-gray-700">EN</span>
+        <!-- Default text is FR because default language is EN -->
+        <span id="lang-text" class="text-sm font-bold text-gray-700">FR</span>
     </button>
 
     <!-- Main Content Wrapper -->
@@ -369,27 +370,27 @@
 
         // --- 1. SOCIAL & GAMING ACCOUNTS DATA ---
         const accounts = [
-            { platform: "NightCafe", id: "AI_Genderless", desc: "(Ai Videos & Images)", desc_fr: "(Vidéos et Images IA)", icon: "fas fa-palette", color: "text-fuchsia-600", link: "https://creator.nightcafe.studio/u/AI_Genderless" },
-            { platform: "Suno", id: "@ai_genderless", desc: "(Ai Music)", desc_fr: "(Musique IA)", icon: "fas fa-music", color: "text-orange-500", link: "https://suno.com/@ai_genderless" },
-            { platform: "Steam", id: "Elsa Ballerina", desc: "(Used to be: soulpaladin)", desc_fr: "(Anciennement : soulpaladin)", icon: "fab fa-steam", color: "text-blue-900", link: "https://steamcommunity.com/id/elsaballerina/" },
-            { platform: "Discord", id: "elsaballerina", desc: "(Server: 🩰Ballet of Death🩰)", desc_fr: "(Serveur : 🩰Ballet of Death🩰)", icon: "fab fa-discord", color: "text-indigo-600", link: "https://discord.com/" },
+            { platform: "NightCafe", id: "AI_Genderless", desc_en: "(Ai Videos & Images)", desc_fr: "(Vidéos et Images IA)", icon: "fas fa-palette", color: "text-fuchsia-600", link: "https://creator.nightcafe.studio/u/AI_Genderless" },
+            { platform: "Suno", id: "@ai_genderless", desc_en: "(Ai Music)", desc_fr: "(Musique IA)", icon: "fas fa-music", color: "text-orange-500", link: "https://suno.com/@ai_genderless" },
+            { platform: "Steam", id: "Elsa Ballerina", desc_en: "(Used to be: soulpaladin)", desc_fr: "(Anciennement : soulpaladin)", icon: "fab fa-steam", color: "text-blue-900", link: "https://steamcommunity.com/id/elsaballerina/" },
+            { platform: "Discord", id: "elsaballerina", desc_en: "(Server: 🩰Ballet of Death🩰)", desc_fr: "(Serveur : 🩰Ballet of Death🩰)", icon: "fab fa-discord", color: "text-indigo-600", link: "https://discord.com/" },
             { platform: "Xbox", id: "BalletPointe", icon: "fab fa-xbox", color: "text-green-600", link: "https://www.xbox.com/" },
             { platform: "Facebook", id: "Elsa Ballerina", icon: "fab fa-facebook", color: "text-blue-600", link: "https://www.facebook.com/" },
             { platform: "X (Twitter)", id: "ElsaBallerina", icon: "fab fa-x-twitter", color: "text-gray-900", link: "https://www.x.com/@ElsaBallerina" },
             { platform: "Twitch", id: "elsaballerina", icon: "fab fa-twitch", color: "text-purple-600", link: "https://www.twitch.tv/elsaballerina" },
             { platform: "Reddit", id: "ElsaBallet", icon: "fab fa-reddit", color: "text-orange-600", link: "https://www.reddit.com/u/ElsaBallet/" },
             { platform: "YouTube", id: "Elsa Ballerina", icon: "fab fa-youtube", color: "text-red-600", link: "https://www.youtube.com/@ElsaBallerina" },
-            { platform: "Blizzard", id: "ElsaBallet#1940", desc: "Also: Ballerina#11220", desc_fr: "Aussi : Ballerina#11220", icon: "fab fa-battle-net", color: "text-blue-500", link: "https://www.blizzard.com/" },
+            { platform: "Blizzard", id: "ElsaBallet#1940", desc_en: "Also: Ballerina#11220", desc_fr: "Aussi : Ballerina#11220", icon: "fab fa-battle-net", color: "text-blue-500", link: "https://www.blizzard.com/" },
             { platform: "Epic Games", id: "Elsa Ballerina", icon: "fas fa-gamepad", color: "text-gray-800", link: "https://www.epicgames.com/" },
-            { platform: "Ubisoft", id: "ElsaBallerina", desc: "(Used to be: Yuiko)", desc_fr: "(Anciennement : Yuiko)", icon: "fas fa-gamepad", color: "text-blue-700", link: "https://www.ubisoft.com/" },
+            { platform: "Ubisoft", id: "ElsaBallerina", desc_en: "(Used to be: Yuiko)", desc_fr: "(Anciennement : Yuiko)", icon: "fas fa-gamepad", color: "text-blue-700", link: "https://www.ubisoft.com/" },
             { platform: "Electronic Arts", id: "ElsaBallerina", icon: "fas fa-gamepad", color: "text-red-700", link: "https://www.ea.com/" },
             { platform: "GOG", id: "Elsa Ballerina", icon: "fas fa-gamepad", color: "text-purple-800", link: "https://www.gog.com/" },
             { platform: "Activision", id: "Elsa Ballerina#3650968", icon: "fas fa-crosshairs", color: "text-gray-800", link: "https://www.activision.com/" },
-            { platform: "Bungie", id: "Ballerina#2773", desc: "(Used to be: soulpaladin)", desc_fr: "(Anciennement : soulpaladin)", icon: "fas fa-rocket", color: "text-gray-700", link: "https://www.bungie.net/" },
-            { platform: "ArenaNet", id: "Ballerina.9106", desc: "(Guild Wars 2)", desc_fr: "(Guild Wars 2)", icon: "fas fa-dragon", color: "text-red-800", link: "https://www.arena.net/" },
+            { platform: "Bungie", id: "Ballerina#2773", desc_en: "(Used to be: soulpaladin)", desc_fr: "(Anciennement : soulpaladin)", icon: "fas fa-rocket", color: "text-gray-700", link: "https://www.bungie.net/" },
+            { platform: "ArenaNet", id: "Ballerina.9106", desc_en: "(Guild Wars 2)", desc_fr: "(Guild Wars 2)", icon: "fas fa-dragon", color: "text-red-800", link: "https://www.arena.net/" },
             { platform: "Nintendo", id: "SW-0034-0920-3926", icon: "fas fa-gamepad", color: "text-red-600", link: "https://www.nintendo.com/" },
-            { platform: "HoYoLAB", id: "UID: 636834676", desc: "(Genshin Impact)", desc_fr: "(Genshin Impact)", icon: "fas fa-star", color: "text-yellow-600", link: "https://www.hoyolab.com/accountCenter?id=165829571" },
-            { platform: "Gryphline", id: "UID: 6271456168", desc: "(Arknights Endfield)", desc_fr: "(Arknights Endfield)", icon: "fas fa-cube", color: "text-teal-600", link: "https://www.gryphline.com/" },
+            { platform: "HoYoLAB", id: "UID: 636834676", desc_en: "(Genshin Impact)", desc_fr: "(Genshin Impact)", icon: "fas fa-star", color: "text-yellow-600", link: "https://www.hoyolab.com/accountCenter?id=165829571" },
+            { platform: "Gryphline", id: "UID: 6271456168", desc_en: "(Arknights Endfield)", desc_fr: "(Arknights Endfield)", icon: "fas fa-cube", color: "text-teal-600", link: "https://www.gryphline.com/" },
         ];
 
         const grid = document.getElementById('connections-grid');
@@ -402,7 +403,7 @@
                 card.className = "game-card glass-panel rounded-2xl p-4 flex items-center gap-4 cursor-pointer h-full";
                 
                 // Select correct language description
-                let displayDesc = (currentLang === 'fr' && acc.desc_fr) ? acc.desc_fr : acc.desc;
+                let displayDesc = (currentLang === 'fr' && acc.desc_fr) ? acc.desc_fr : acc.desc_en;
                 let descHtml = displayDesc ? `<p class="text-xs text-gray-600 mt-1">${displayDesc}</p>` : '';
 
                 card.innerHTML = `
@@ -448,7 +449,11 @@
                 }
             });
             
-            langText.innerText = lang.toUpperCase();
+            // SHOW THE OPPOSITE LANGUAGE ON THE BUTTON
+            // If the page is in English, the button says "FR" to switch to French
+            // If the page is in French, the button says "EN" to switch to English
+            langText.innerText = lang === 'en' ? 'FR' : 'EN';
+            
             renderConnections(); // Refresh grid items for translated descriptions
         }
 
