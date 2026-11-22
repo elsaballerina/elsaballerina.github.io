@@ -231,55 +231,112 @@
         <!-- MY APPS & TOOLS SHOWCASE -->
         <section class="glass-panel rounded-3xl p-8 w-full bg-white/50">
             <h2 class="cursive-title text-4xl text-pink-500 mb-6 border-b-2 border-pink-200 pb-2 inline-block" data-i18n="apps-title">🌸 My Apps &amp; Tools</h2>
-            <div class="flex flex-col md:flex-row items-center gap-8">
-                <!-- Cute App Icon Showcase -->
-                <div class="w-36 h-36 sm:w-44 sm:h-44 shrink-0 rounded-2xl bg-gradient-to-br from-pink-400 via-purple-400 to-blue-400 shadow-lg border-2 border-pink-200 flex flex-col items-center justify-center text-white relative">
-                    <i class="fas fa-desktop text-5xl mb-2 drop-shadow"></i>
-                    <span class="text-xs font-bold uppercase tracking-wider bg-white/25 backdrop-blur-sm px-3 py-0.5 rounded-full border border-white/40">v1.0</span>
-                    <div class="absolute -top-3 -right-3 bg-white rounded-full w-10 h-10 flex items-center justify-center text-xl shadow-md border border-pink-200">🌸</div>
+
+            <div class="space-y-10">
+                <!-- APP 1: ELSA-CUTE-DISPLAY -->
+                <div class="flex flex-col md:flex-row items-center gap-8">
+                    <!-- Cute App Icon Showcase -->
+                    <div class="w-36 h-36 sm:w-44 sm:h-44 shrink-0 rounded-2xl bg-gradient-to-br from-pink-400 via-purple-400 to-blue-400 shadow-lg border-2 border-pink-200 flex flex-col items-center justify-center text-white relative">
+                        <i class="fas fa-desktop text-5xl mb-2 drop-shadow"></i>
+                        <span class="text-xs font-bold uppercase tracking-wider bg-white/25 backdrop-blur-sm px-3 py-0.5 rounded-full border border-white/40">v1.0</span>
+                        <div class="absolute -top-3 -right-3 bg-white rounded-full w-10 h-10 flex items-center justify-center text-xl shadow-md border border-pink-200">🌸</div>
+                    </div>
+
+                    <!-- App Details -->
+                    <div class="flex-1 text-center md:text-left">
+                        <h3 class="cursive-title text-3xl sm:text-4xl text-pink-500 font-bold mb-1">✨ Elsa-Cute-Display</h3>
+
+                        <!-- Platform & Tech Badges -->
+                        <div class="flex flex-wrap gap-2 justify-center md:justify-start mb-3">
+                            <span class="tool-badge text-xs font-bold px-3 py-1 rounded-full bg-pink-100 text-pink-700 border border-pink-200">Fedora Workstation</span>
+                            <span class="tool-badge text-xs font-bold px-3 py-1 rounded-full bg-pink-100 text-pink-700 border border-pink-200">GNOME Wayland</span>
+                            <span class="tool-badge text-xs font-bold px-3 py-1 rounded-full bg-pink-100 text-pink-700 border border-pink-200">GTK4 + Libadwaita</span>
+                            <span class="tool-badge text-xs font-bold px-3 py-1 rounded-full bg-pink-100 text-pink-700 border border-pink-200">Open Source (MIT)</span>
+                        </div>
+
+                        <!-- Description -->
+                        <p class="text-gray-800 text-base sm:text-lg leading-relaxed mb-4" data-i18n="app-ecd-desc">
+                            My very first native Linux app! Built to stop DisplayLink docks and multi-monitor setups from resetting their positions and rotations on Fedora Workstation. Save your layouts by monitor serial number and switch profiles in one click.
+                        </p>
+
+                        <!-- Compact 2x2 Feature Grid -->
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-2.5 mb-5 text-sm">
+                            <div class="tool-feature bg-white/60 border border-white/80 rounded-xl px-3 py-2 font-semibold text-gray-800 shadow-sm" data-i18n="app-ecd-f1">
+                                💾 Capture &amp; Save As .sh
+                            </div>
+                            <div class="tool-feature bg-white/60 border border-white/80 rounded-xl px-3 py-2 font-semibold text-gray-800 shadow-sm" data-i18n="app-ecd-f2">
+                                ⚡ Instant Quick-Apply Dropdown
+                            </div>
+                            <div class="tool-feature bg-white/60 border border-white/80 rounded-xl px-3 py-2 font-semibold text-gray-800 shadow-sm" data-i18n="app-ecd-f3">
+                                ⌨️ Live Shortcut Capture
+                            </div>
+                            <div class="tool-feature bg-white/60 border border-white/80 rounded-xl px-3 py-2 font-semibold text-gray-800 shadow-sm" data-i18n="app-ecd-f4">
+                                🌙 Light &amp; Dark Mode UI
+                            </div>
+                        </div>
+
+                        <!-- Action Buttons -->
+                        <div class="flex flex-col sm:flex-row items-center gap-3 justify-center md:justify-start">
+                            <a href="https://github.com/elsaballerina/Elsa-Cute-Display/releases/latest" target="_blank" rel="noopener noreferrer" class="bg-gradient-to-r from-pink-400 to-pink-500 hover:from-pink-500 hover:to-pink-600 text-white font-bold py-3 px-6 rounded-full shadow-lg transition-transform hover:scale-105 flex items-center gap-2" data-i18n="app-ecd-dl">
+                                <i class="fas fa-download"></i> Download v1.0
+                            </a>
+                            <a href="https://github.com/elsaballerina/Elsa-Cute-Display" target="_blank" rel="noopener noreferrer" class="bg-indigo-500 hover:bg-indigo-600 text-white font-bold py-3 px-6 rounded-full shadow-lg transition-transform hover:scale-105 flex items-center gap-2" data-i18n="app-ecd-gh">
+                                <i class="fab fa-github text-xl"></i> View on GitHub
+                            </a>
+                        </div>
+                    </div>
                 </div>
 
-                <!-- App Details -->
-                <div class="flex-1 text-center md:text-left">
-                    <h3 class="cursive-title text-3xl sm:text-4xl text-pink-500 font-bold mb-1">✨ Elsa-Cute-Display</h3>
-
-                    <!-- Platform & Tech Badges -->
-                    <div class="flex flex-wrap gap-2 justify-center md:justify-start mb-3">
-                        <span class="tool-badge text-xs font-bold px-3 py-1 rounded-full bg-pink-100 text-pink-700 border border-pink-200">Fedora Workstation</span>
-                        <span class="tool-badge text-xs font-bold px-3 py-1 rounded-full bg-pink-100 text-pink-700 border border-pink-200">GNOME Wayland</span>
-                        <span class="tool-badge text-xs font-bold px-3 py-1 rounded-full bg-pink-100 text-pink-700 border border-pink-200">GTK4 + Libadwaita</span>
-                        <span class="tool-badge text-xs font-bold px-3 py-1 rounded-full bg-pink-100 text-pink-700 border border-pink-200">Open Source (MIT)</span>
+                <!-- APP 2: ELSA-CUTE-DISKGUARD -->
+                <div class="flex flex-col md:flex-row items-center gap-8 pt-8 border-t-2 border-pink-200/70">
+                    <!-- Cute Lock/Shield App Icon Showcase -->
+                    <div class="w-36 h-36 sm:w-44 sm:h-44 shrink-0 rounded-2xl bg-gradient-to-br from-pink-500 via-purple-500 to-indigo-500 shadow-lg border-2 border-pink-200 flex flex-col items-center justify-center text-white relative">
+                        <i class="fas fa-shield-halved text-5xl mb-2 drop-shadow"></i>
+                        <span class="text-xs font-bold uppercase tracking-wider bg-white/25 backdrop-blur-sm px-3 py-0.5 rounded-full border border-white/40">v1.0</span>
+                        <div class="absolute -top-3 -right-3 bg-white rounded-full w-10 h-10 flex items-center justify-center text-xl shadow-md border border-pink-200">🔐</div>
                     </div>
 
-                    <!-- Description -->
-                    <p class="text-gray-800 text-base sm:text-lg leading-relaxed mb-4" data-i18n="app-ecd-desc">
-                        My very first native Linux app! Built to stop DisplayLink docks and multi-monitor setups from resetting their positions and rotations on Fedora Workstation. Save your layouts by monitor serial number and switch profiles in one click.
-                    </p>
+                    <!-- App Details -->
+                    <div class="flex-1 text-center md:text-left">
+                        <h3 class="cursive-title text-3xl sm:text-4xl text-pink-500 font-bold mb-1">✨ Elsa-Cute-DiskGuard</h3>
 
-                    <!-- Compact 2x2 Feature Grid -->
-                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-2.5 mb-5 text-sm">
-                        <div class="tool-feature bg-white/60 border border-white/80 rounded-xl px-3 py-2 font-semibold text-gray-800 shadow-sm" data-i18n="app-ecd-f1">
-                            💾 Capture &amp; Save As .sh
+                        <!-- Platform & Tech Badges -->
+                        <div class="flex flex-wrap gap-2 justify-center md:justify-start mb-3">
+                            <span class="tool-badge text-xs font-bold px-3 py-1 rounded-full bg-pink-100 text-pink-700 border border-pink-200">Fedora Workstation</span>
+                            <span class="tool-badge text-xs font-bold px-3 py-1 rounded-full bg-pink-100 text-pink-700 border border-pink-200">GTK4 + Libadwaita</span>
+                            <span class="tool-badge text-xs font-bold px-3 py-1 rounded-full bg-pink-100 text-pink-700 border border-pink-200">LUKS2 &amp; TPM2</span>
                         </div>
-                        <div class="tool-feature bg-white/60 border border-white/80 rounded-xl px-3 py-2 font-semibold text-gray-800 shadow-sm" data-i18n="app-ecd-f2">
-                            ⚡ Instant Quick-Apply Dropdown
-                        </div>
-                        <div class="tool-feature bg-white/60 border border-white/80 rounded-xl px-3 py-2 font-semibold text-gray-800 shadow-sm" data-i18n="app-ecd-f3">
-                            ⌨️ Live Shortcut Capture
-                        </div>
-                        <div class="tool-feature bg-white/60 border border-white/80 rounded-xl px-3 py-2 font-semibold text-gray-800 shadow-sm" data-i18n="app-ecd-f4">
-                            🌙 Light &amp; Dark Mode UI
-                        </div>
-                    </div>
 
-                    <!-- Action Buttons -->
-                    <div class="flex flex-col sm:flex-row items-center gap-3 justify-center md:justify-start">
-                        <a href="https://github.com/elsaballerina/Elsa-Cute-Display/releases/latest" target="_blank" rel="noopener noreferrer" class="bg-gradient-to-r from-pink-400 to-pink-500 hover:from-pink-500 hover:to-pink-600 text-white font-bold py-3 px-6 rounded-full shadow-lg transition-transform hover:scale-105 flex items-center gap-2" data-i18n="app-ecd-dl">
-                            <i class="fas fa-download"></i> Download v1.0
-                        </a>
-                        <a href="https://github.com/elsaballerina/Elsa-Cute-Display" target="_blank" rel="noopener noreferrer" class="bg-indigo-500 hover:bg-indigo-600 text-white font-bold py-3 px-6 rounded-full shadow-lg transition-transform hover:scale-105 flex items-center gap-2" data-i18n="app-ecd-gh">
-                            <i class="fab fa-github text-xl"></i> View on GitHub
-                        </a>
+                        <!-- Description -->
+                        <p class="text-gray-800 text-base sm:text-lg leading-relaxed mb-4" data-i18n="app-ecdg-desc">
+                            A cute GTK4 + Libadwaita Linux disk management and LUKS2 encryption utility with a BitLocker-style workflow. Includes 48-digit recovery keys, non-destructive in-place encryption, TPM2 auto-unlock management, smart busy-drive recovery, and a post-install OS encryption wizard.
+                        </p>
+
+                        <!-- Compact 2x2 Feature Grid -->
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-2.5 mb-5 text-sm">
+                            <div class="tool-feature bg-white/60 border border-white/80 rounded-xl px-3 py-2 font-semibold text-gray-800 shadow-sm" data-i18n="app-ecdg-f1">
+                                🔐 LUKS2 &amp; 48-Digit Recovery Keys
+                            </div>
+                            <div class="tool-feature bg-white/60 border border-white/80 rounded-xl px-3 py-2 font-semibold text-gray-800 shadow-sm" data-i18n="app-ecdg-f2">
+                                🔑 TPM2 Auto-Unlock &amp; In-Place Crypto
+                            </div>
+                            <div class="tool-feature bg-white/60 border border-white/80 rounded-xl px-3 py-2 font-semibold text-gray-800 shadow-sm" data-i18n="app-ecdg-f3">
+                                🛡️ Smart Busy-Drive Recovery
+                            </div>
+                            <div class="tool-feature bg-white/60 border border-white/80 rounded-xl px-3 py-2 font-semibold text-gray-800 shadow-sm" data-i18n="app-ecdg-f4">
+                                💻 Post-Install OS Encryption Wizard
+                            </div>
+                        </div>
+
+                        <!-- Action Buttons -->
+                        <div class="flex flex-col sm:flex-row items-center gap-3 justify-center md:justify-start">
+                            <a href="https://github.com/elsaballerina/Elsa-Cute-DiskGuard/releases/latest" target="_blank" rel="noopener noreferrer" class="bg-gradient-to-r from-pink-400 to-pink-500 hover:from-pink-500 hover:to-pink-600 text-white font-bold py-3 px-6 rounded-full shadow-lg transition-transform hover:scale-105 flex items-center gap-2" data-i18n="app-ecdg-dl">
+                                <i class="fas fa-download"></i> Download v1.0
+                            </a>
+                            <a href="https://github.com/elsaballerina/Elsa-Cute-DiskGuard" target="_blank" rel="noopener noreferrer" class="bg-indigo-500 hover:bg-indigo-600 text-white font-bold py-3 px-6 rounded-full shadow-lg transition-transform hover:scale-105 flex items-center gap-2" data-i18n="app-ecdg-gh">
+                                <i class="fab fa-github text-xl"></i> View on GitHub
+                            </a>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -392,6 +449,13 @@
                 "app-ecd-f4": "🌙 Light &amp; Dark Mode UI",
                 "app-ecd-dl": "<i class=\"fas fa-download\"></i> Download v1.0",
                 "app-ecd-gh": "<i class=\"fab fa-github text-xl\"></i> View on GitHub",
+                "app-ecdg-desc": "A cute GTK4 + Libadwaita Linux disk management and LUKS2 encryption utility with a BitLocker-style workflow. Includes 48-digit recovery keys, non-destructive in-place encryption, TPM2 auto-unlock management, smart busy-drive recovery, and a post-install OS encryption wizard.",
+                "app-ecdg-f1": "🔐 LUKS2 &amp; 48-Digit Recovery Keys",
+                "app-ecdg-f2": "🔑 TPM2 Auto-Unlock &amp; In-Place Crypto",
+                "app-ecdg-f3": "🛡️ Smart Busy-Drive Recovery",
+                "app-ecdg-f4": "💻 Post-Install OS Encryption Wizard",
+                "app-ecdg-dl": "<i class=\"fas fa-download\"></i> Download v1.0",
+                "app-ecdg-gh": "<i class=\"fab fa-github text-xl\"></i> View on GitHub",
                 "conn-title": "🎮 My Connections 🎮",
                 "conn-desc": "Click any card to open a new web browser tab!",
                 "lore-title": "📖 The Lore of My Names",
@@ -430,6 +494,13 @@
                 "app-ecd-f4": "🌙 Interface Mode Clair & Sombre",
                 "app-ecd-dl": "<i class=\"fas fa-download\"></i> Télécharger v1.0",
                 "app-ecd-gh": "<i class=\"fab fa-github text-xl\"></i> Voir sur GitHub",
+                "app-ecdg-desc": "Un utilitaire Linux mignon en GTK4 + Libadwaita pour la gestion des disques et le chiffrement LUKS2 avec un flux de travail style BitLocker. Comprend des clés de récupération à 48 chiffres, le chiffrement sur place non destructif, la gestion du déverrouillage automatique TPM2, la récupération intelligente des disques occupés et un assistant de chiffrement de l'OS après installation.",
+                "app-ecdg-f1": "🔐 LUKS2 et clés de récupération 48 chiffres",
+                "app-ecdg-f2": "🔑 Déverrouillage TPM2 et chiffrement sur place",
+                "app-ecdg-f3": "🛡️ Récupération intelligente disque occupé",
+                "app-ecdg-f4": "💻 Assistant chiffrement OS post-installation",
+                "app-ecdg-dl": "<i class=\"fas fa-download\"></i> Télécharger v1.0",
+                "app-ecdg-gh": "<i class=\"fab fa-github text-xl\"></i> Voir sur GitHub",
                 "conn-title": "🎮 Mes Connexions 🎮",
                 "conn-desc": "Cliquez sur une carte pour ouvrir un nouvel onglet !",
                 "lore-title": "📖 L'Histoire de Mes Noms",
